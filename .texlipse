@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Nov 06 16:51:05 CET 2013
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=orddiff.tex
+outputFile=orddiff.pdf
+langSpell=de
+markDer=true
+srcDir=
