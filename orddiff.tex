@@ -1,16 +1,49 @@
-%Dokumentinformationen
-\newcommand{\titleinfo}{OrdDiff - Formelsammlung}
-\newcommand{\authorinfo}{Ch. Winterhalter, Selina Malacarne, Hannes Diethelm}
-\newcommand{\versioninfo}{$Revision: 2.1 $}
+\documentclass{scrartcl}
+\usepackage{etex}
+\include{header/zusammenfassung}
+\include{header/hyperref}
+\include{header/listings}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{intersections}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\usepackage{circuitikz}
+
+\tikzstyle{3x3mask}=[
+	matrix of nodes, 
+	nodes={draw, minimum size=8mm, anchor=center},
+	column sep=0mm
+]
 
 
-% standard header
-\include{header/header} % ./header.tex nicht editieren (Projekt LaTeX-Header benutzen)
+% Spaltenabstand bei ,ulticols
+\setlength{\columnsep}{1.5em}
+
+\title{OrdDiff Zusammenfassung}
+\subtitle{Dozent: Ch. Zaugg, Ordinary Differential Equation}
+\author{Ch. Winterhalter, S. Malacarne, H. Diethelm}
 
 \begin{document}
-\setlength{\parindent}{0pt}
+\selectlanguage{english}
 
-%\input{sections/integralrechnung.tex}
+\lstset{language=Matlab}
 
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\setcounter{section}{8}
+%\input{sections/MorphologicalImageProcessing}
+%\input{sections/ImageSegmentation}
+%\input{sections/RepresentationDescription}
+%\input{sections/ObjectRecognition}
+%\input{sections/PracticalExercises}
 
 \end{document}
