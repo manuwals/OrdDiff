@@ -11,7 +11,7 @@ $\dfrac{d}{dt}y(t)=f(t,y(t))$
 \textbf{Vorgehen:}              &
 
 1. $\mu(t)$ berechnen: $\mu(t) = e^{\int p(t) dt}$ \\ &&
-2. Loesung: $y(t) = \frac{1}{\mu(t)} \cdot ( \int \mu(t) g(t) dt +c)$ \\ &&
+2. L"osung: $y(t) = \frac{1}{\mu(t)} \cdot ( \int \mu(t) g(t) dt +c)$ \\ &&
 \end{tabular}
 \textbf{Bsp}: $t^3 \cdot y'(t) + 4 t^2 \cdot y(t) = e^{-t} \quad \Longrightarrow \quad y'(t) + \underbrace{4 \frac{1}{t}}_{p(t)} \cdot y(t) = \underbrace{\frac{1}{t^3} e^-t}_{g(t))}$
 
@@ -22,7 +22,7 @@ $\dfrac{d}{dt}y(t)=f(t,y(t))$
 
 1. $H_1(x)$ berechnen: $H_1(x) = \int M(x) dx$ \\ &&
 2. $H_2(y)$ berechnen: $H_2(y) = \int N(y)dy$ \\ &&
-3. Loesung: $H_1(x) + H_2(y) = c$ ; c folgt aus Anf. Bed.\\\\
+3. L"osung: $H_1(x) + H_2(y) = c$ ; c folgt aus Anf. Bed.\\\\
 \end{tabular}
 \textbf{Bsp}: $y'(x) = (1-2x)y^2 \quad \Longrightarrow \quad \underbrace{-(1-2x)}_{M(x)} + \underbrace{\frac{1}{y^2}}_{N(y(x))} \cdot y'(x) = 0$
 
@@ -31,12 +31,12 @@ $\dfrac{d}{dt}y(t)=f(t,y(t))$
 \textbf{Form:} $M(x,y) + N(x,y)\cdot y'(x) = 0$ &
 \textbf{Vorgehen:}              &
 
-1. Kompatibilitaets Bed. pruefen: $\diffp{M(x,y)}{y} = \diffp{N(x,y)}{x}$ \\ &&
+1. Kompatibilitaets Bed. pr"ufen: $\diffp{M(x,y)}{y} = \diffp{N(x,y)}{x}$ \\ &&
 2. $ M(x,y) = \dfrac{d}{dx}\Psi(x,y) \qquad N(x,y) = \dfrac{d}{dy}\Psi(x,y) $ \\ &&
 3. $Q(x,y)$ berechnen: $Q(x,y) = \int M(x,y) dx$ \\ &&
 4. $\diffp{h(y)}{y}$ berechnen: $\diffp{h(y)}{y} = N(x,y) - \diffp{Q(x,y)}{y}$ \\ &&
 5. $h(y)$ berechnen: $h(y) = \int \diffp{h(y)}{y} dy $ \\ &&
-6. Loesung: $\Psi(x,y) = Q(x,y) + h(y) = c $ \\ &&
+6. L"osung: $\Psi(x,y) = Q(x,y) + h(y) = c $ \\ &&
 \end{tabular}
 \textbf{Bsp}: $(9x^2 + y -1)dx - (4y -x)dy = 0 \quad \Longrightarrow \quad  \underbrace{9x^2 +y -1}_{M(x,y)} + \underbrace{(-(4y -x))}_{N(x,y)} \cdot \diffp{y}{x} = 0$
 
@@ -105,3 +105,26 @@ k_{i,3} = f(t_{i} + \dfrac{h}{2},y_{i} + \dfrac{h}{2}k_{i,2}) \qquad
 k_{i,3} = f(t_{i} + h,y_{i} + h \: k_{i,2}) \qquad$\\
 $e_n \approx h^5 \qquad E_n \approx h^4$
 \subsection{Bifurkationen}
+Gegeben ist eine autonome Differentialgleichung mit reellen Parametern.
+
+\begin{equation*}
+	\diffp{}{t}y(t) = f(a,y(t))
+\end{equation*}
+
+Gesucht die Kritischen punkte die sogenannten Gleichgewichtslösungen. Diese sind wie folgt definiert:
+\begin{equation*}
+	\diffp{}{t}y(t) = 0
+\end{equation*}
+Die Gleichgewichtslösungen wird in 3 Fälle unterschieden:\\
+
+\begin{minipage}[h]{0.35\textwidth} 
+	\includegraphics[width=1.0\textwidth]{images/Phasengerade.png}
+\end{minipage}
+\begin{minipage}[h]{0.35\textwidth}
+	\includegraphics[width=1.0\textwidth]{images/Richtungsfeld.png}
+\end{minipage}
+\begin{tabular}{p{1.8cm}p{5cm}}
+	$y(t) = -2$: & instabiel \\
+	$y(t) = 0$: & semistabil\\
+	$y(t) = 2$: & asymtotisch stabil\\
+\end{tabular}
