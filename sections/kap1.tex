@@ -1,0 +1,65 @@
+\section{Kappitel 1}
+
+\subsection{Symbolisch}
+
+\subsubsection{Allgemein 1. Ordnung}
+$\dfrac{d}{dt}y(t)=f(t,y(t))$
+
+\subsubsection{Linear}
+\begin{tabular}{p{6cm}p{1.8cm}p{10.5cm}}
+\textbf{Form:} $\dfrac{d}{dt}y(t) +p(t)y(t)=g(t)$ &
+\textbf{Vorgehen:}              &
+1. $\mu(t)=e^{\int p(t)dt}$ \\ &&
+2. $y(t)=\dfrac{1}{\mu(t)}\left(\int{\mu(t)g(t) dt+C}\right)$ \\ &&
+\end{tabular}
+
+\subsubsection{Separierbar}
+\begin{tabular}{p{6cm}p{1.8cm}p{10.5cm}}
+\textbf{Form:} $M(x)+N(y(x))(\dfrac{d}{dx}y(x))=0$ &
+\textbf{Vorgehen:}              &
+1. $H_1=\int M(x)dx \qquad H_2=\int N(y)dy$ \\ &&
+2. $H_1(x) + H_2(y(x)) = C$ \\ &&
+\end{tabular}
+
+\subsubsection{Exakt}
+\begin{tabular}{p{6cm}p{1.8cm}p{10.5cm}}
+\textbf{Form:} $M(x,y) + N(x,y)(\dfrac{d}{dx}y(x))=0$ &
+\textbf{Vorgehen:}              &
+1. $ M(x,y) = \dfrac{d}{dx}\Psi(x,y) \qquad N(x,y) = \dfrac{d}{dy}\Psi(x,y) $ \\
+wobei $\dfrac{d}{dy}M(x,y) = \dfrac{d}{dx}N(x,y)$ &&
+2. Potential $\Psi(x,y) = Q(x,y) + h(y) \qquad Q(x,y) = \int M(x,y) dx$ \\ &&
+3. $\dfrac{d}{dy}h(y) = N(x,y) - \dfrac{d}{dy}Q(x,y) \rightarrow h(y)=\int dy$  \\ &&
+4. Lösung: $\Psi(x,y) = Q(x,y) + h(y) = c$\\ &&
+\end{tabular}
+
+\subsection{Nummerisch}
+\subsubsection{Fehler}
+
+\begin{tabbing}
+Tatzächlicher Wert  \= $\phi(t_n)$ \\
+Globaler Fehler \> $E_n = \phi(t_n) - y_n$ \\
+Lokaler Fehler \> $e_{n+1} = \phi(t_n + h) - y_{n+1}$ \\
+Rundungsfehler \> $R_n = y_n - Y_n$ wobei $Y_n$ gerundet
+\end{tabbing}
+
+\subsubsection{Euler}
+Polygonzug mit Steigung $y'(t)$\\
+$y'(t)=f(t,y(t)) \qquad y(t_0)=y_0 \qquad$ Zeitschritt $h$\\
+$t_i = t_{i-1} + h \qquad y_i=y_{i-1} + h \cdot f(t_{i-1},y_{i-1})$\\
+
+$|\phi''(t)|<M \qquad |e_n| < \dfrac{M*h^2}{2} \qquad
+h_n < \sqrt{\dfrac{2\epsilon}{M}} \qquad E_n \approx h$
+\subsubsection{Heun}
+Trapez Approximation\\
+$y'(t)=f(t,y(t)) \qquad y(t_0)=y_0 \qquad$ Zeitschritt $h$\\
+Idee: $y_i=y_{i-1} + h \cdot \dfrac{f(t_{i-1},y_{i-1}) + f(t_{i},y_{i})}{2}$\\
+$t_i = t_{i-1} + h \qquad y_{i-1} + h \cdot \dfrac{f(t_{i-1},y_{i-1}) + f(t_{i},y_{i-1} + h \cdot f(t_{i-1},y_{i-1}))}{2}$\\
+$e_n \approx h^3 \qquad E_n \approx h^2$
+\subsubsection{Runge-Kutta}
+$y_{i+1}=y_i + h \cdot \dfrac{k_{i,1} + 2\:k_{i,2} + 2\:k_{i,3} + k_{i,4} }{6}$\\
+$k_{i,1} = f(t_{i},y_{i}) \qquad 
+k_{i,2} = f(t_{i} + \dfrac{h}{2},y_{i} + \dfrac{h}{2}k_{i,1}) \qquad 
+k_{i,3} = f(t_{i} + \dfrac{h}{2},y_{i} + \dfrac{h}{2}k_{i,2}) \qquad 
+k_{i,3} = f(t_{i} + h,y_{i} + h \: k_{i,2}) \qquad$\\
+$e_n \approx h^5 \qquad E_n \approx h^4$
+\subsection{Bifurkationen}
