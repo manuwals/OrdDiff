@@ -40,6 +40,40 @@ $\dfrac{d}{dt}y(t)=f(t,y(t))$
 \end{tabular}
 \textbf{Bsp}: $(9x^2 + y -1)dx - (4y -x)dy = 0 \quad \Longrightarrow \quad  \underbrace{9x^2 +y -1}_{M(x,y)} + \underbrace{(-(4y -x))}_{N(x,y)} \cdot \diffp{y}{x} = 0$
 
+%\subsubsection{Linear}
+%
+%\textbf{Form:} $\dfrac{d}{dt}y(t) +p(t)y(t)=g(t)$ \\
+%
+%\textbf{Vorgehen:}
+%\begin{enumerate}
+%\item $\mu(t)=e^{\int p(t)dt}$
+%\item $y(t)=\dfrac{1}{\mu(t)}\left(\int{\mu(t)g(t) dt+C}\right)$
+%\end{enumerate}
+%
+%
+%\subsubsection{Separierbar}
+%
+%\textbf{Form:} $M(x)+N(y(x))(\dfrac{d}{dx}y(x))=0$\\
+%
+%\textbf{Vorgehen:}
+%\begin{enumerate}
+%\item $H_1=\int M(x)dx \qquad H_2=\int N(y)dy$
+%\item $H_1(x) + H_2(y(x)) = C$
+%\end{enumerate}
+%
+%\subsubsection{Exakt}
+%\textbf{Form:} $M(x,y) + N(x,y)(\dfrac{d}{dx}y(x))=0$ 
+%\quad wobei \quad $\dfrac{d}{dy}M(x,y) = \dfrac{d}{dx}N(x,y)$\\
+%
+%\textbf{Vorgehen:}
+%\begin{enumerate}
+%\item $ M(x,y) = \dfrac{d}{dx}\Psi(x,y) \qquad N(x,y) = \dfrac{d}{dy}\Psi(x,y) $
+%\item Potential $\Psi(x,y) = Q(x,y) + h(y) \qquad Q(x,y) = \int M(x,y) dx$
+%\item $\dfrac{d}{dy}h(y) = N(x,y) - \dfrac{d}{dy}Q(x,y) \rightarrow h(y)=\int dy$
+%\item Lösung: $\Psi(x,y) = Q(x,y) + h(y) = c$
+%\end{enumerate}
+
+
 \subsection{Nummerisch}
 \subsubsection{Fehler}
 
