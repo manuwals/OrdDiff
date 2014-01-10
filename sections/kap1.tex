@@ -4,7 +4,7 @@
 
 \subsubsection{Allgemein 1. Ordnung}
 $\dfrac{d}{dt}y(t)=f(t,y(t)) \qquad y(t_0)=y_0$\\
-Eindeutige Lösung im Intervall falls $f(t,y(t))$ und $\dfrac{d \; f(t,y(t))}{dt}$ stetig im Intervall.
+Eindeutige Lösung $\varphi(t)$ im Intervall falls $f(t,y(t))$ und $\dfrac{d \; f(t,y(t))}{dt}$ stetig im Intervall.
 \subsubsection{Linear DGL}
 \begin{tabular}{p{6cm}p{2cm}p{10.5cm}}
 \textbf{Form:} $y'(t) + p(t) \cdot y(t) = g(t)$ &
@@ -57,7 +57,10 @@ $y'(t)=f(t,y(t)) \qquad y(t_0)=y_0 \qquad$ Zeitschritt $h$\\
 $t_i = t_{i-1} + h \qquad y_i=y_{i-1} + h \cdot f(t_{i-1},y_{i-1})$\\
 
 $|\phi''(t)|<M \qquad |e_n| < \dfrac{M*h^2}{2} \qquad
-h_n < \sqrt{\dfrac{2\epsilon}{M}} \qquad E_n \approx h$
+h_n < \sqrt{\dfrac{2\epsilon}{M}} \qquad E_n \approx h$\\
+$e_{n+1} = \dfrac{1}{2} \cdot \varphi''(\tau_n)\cdot h^2 \qquad \tau_n \text{ zwischenschritt in } [t_n,t_{n+1}]$\\
+$\varphi''(t)=f_t(t,\varphi(t)) + f_y(t,\varphi(t))\cdot\varphi'(t)$
+
 \subsubsection{Heun}
 Trapez Approximation\\
 $y'(t)=f(t,y(t)) \qquad y(t_0)=y_0 \qquad$ Zeitschritt $h$\\
