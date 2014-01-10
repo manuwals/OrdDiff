@@ -3,8 +3,8 @@
 \subsection{Symbolisch}
 
 \subsubsection{Allgemein 1. Ordnung}
-$\dfrac{d}{dt}y(t)=f(t,y(t))$
-
+$\dfrac{d}{dt}y(t)=f(t,y(t)) \qquad y(t_0)=y_0$\\
+Eindeutige Lösung im Intervall falls $f(t,y(t))$ und $\dfrac{d \; f(t,y(t))}{dt}$ stetig im Intervall.
 \subsubsection{Linear DGL}
 \begin{tabular}{p{6cm}p{2cm}p{10.5cm}}
 \textbf{Form:} $y'(t) + p(t) \cdot y(t) = g(t)$ &
@@ -13,6 +13,7 @@ $\dfrac{d}{dt}y(t)=f(t,y(t))$
 1. $\mu(t)$ berechnen: $\mu(t) = e^{\int p(t) dt}$ \\ &&
 2. L"osung: $y(t) = \frac{1}{\mu(t)} \cdot ( \int \mu(t) g(t) dt +c)$ \\ &&
 \end{tabular}
+Lösung existiert und eindeutig falls $p(t)$ und $g(t)$ stetig.\\
 \textbf{Bsp}: $t^3 \cdot y'(t) + 4 t^2 \cdot y(t) = e^{-t} \quad \Longrightarrow \quad y'(t) + \underbrace{4 \frac{1}{t}}_{p(t)} \cdot y(t) = \underbrace{\frac{1}{t^3} e^-t}_{g(t))}$
 
 \subsubsection{Separierbar DGL}
