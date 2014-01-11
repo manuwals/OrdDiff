@@ -64,4 +64,20 @@ $\operatorname{atan2}(B, A) = \begin{cases}
 \end{cases}$
 
 \subsubsection{Erzwungene Schwingung}
+$m \cdot y''(t) + \gamma\cdot y'(t) + k \cdot y(t) = f(t)=Ae^{i\,w\,t} \rightarrow$\\
+$ y''(t) + 2 \, \delta y'(t) + w_0^2 \, y(t) = F(t)$ mit $w_0=\sqrt{\dfrac{k}{m}} \quad \delta=\dfrac{\gamma}{2\,m} \quad F(t)=\dfrac{f(t)}{m}$\\
+$\rightarrow y(t)=y_h(t)+y_p(t)$
+
+\begin{tabbing}
+ohne Dämpfung ($\delta = 0$): \= $y(t) = \dfrac{A}{w_0^2-w^2}(cos(w_0\,t)-cos(w\,t))$\\
+\> $y(t) = \dfrac{A}{w_0^2-w^2}sin(\dfrac{w_0-w}{2} \cdot t)sin(\dfrac{w_0+w}{2} \cdot t)$\\
+\end{tabbing}
+
+\begin{tabbing}
+mit Dämpfung ($\gamma \neq 0$): \= $y_h(t \rightarrow \infty) = 0$\\
+\> $y_p(t)= \dfrac{1}{w_0^2-w^2 + 2\,i\,\delta\,w}Ae^{i\,w\,t}$\\
+\> $y_p(t)= g(w)\,A\,cos(wt-\varphi(w))$\\
+\> $g(w)=\dfrac{1}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}} \quad \varphi(w)=arccos(\dfrac{w_0^2-w^2}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}})$\\
+\> $g_{max}=\dfrac{1}{2\delta} \dfrac{1}{\sqrt{w_0^2-\delta^2}}$ bei $w_{max}=\sqrt{w_0^2-2\,\delta^2}$
+\end{tabbing}
 
