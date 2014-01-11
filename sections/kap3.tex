@@ -1,8 +1,22 @@
 \section{Kapitel 3}
-%TODO by Hannes
 
--Schwingungen\\
--Inhomogenes System 2. Ordnung
+\subsection{Inhomogen 2. Ordnung}
+\begin{tabbing}
+1. Homogenes System lösen \= $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
+2. Inhomogener Ansatz \> $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = g(t)$\\
+\>\begin{tabular}{|l|l|}
+	\hline
+	\textbf{Inhomogenität}              & \textbf{Ansatz} \\ \hline
+	$g(t)=a_0\,t^n + ... + a_n$        & $y(t) = t^s(A_0\,t^n + ... + A_n)$ \\ \hline
+	$g(t)=(a_0\,t^n + ... + a_n)e^{\alpha \, t}$  & $y(t) = t^s(A_0\,t^n + ... + A_n)e^{\alpha \, t}$ \\ \hline
+	$g(t)=(a_0\,t^n + ... + a_n)e^{\alpha \, t}sin(\beta \, t)$
+		& $y(t) = t^s(A_0\,t^n + ... + A_n)e^{\alpha \, t}sin(\beta \, t) + $ \\ 
+	oder $(a_0\,t^n + ... + a_n)e^{\alpha \, t}cos(\beta \, t)$ 
+		&$t^s(B_0\,t^n + ... + B_n)e^{\alpha \, t}cos(\beta \, t)$ \\ \hline
+\end{tabular}\\
+\> $s = [0,1,2]$, so dass kein Summand Lösung der homogenen Gleichung.\\
+3. Zusammensetzen \> $y(t)=y_h(t)+y_p(t)$
+\end{tabbing}
 
 \subsection{Schwingungen}
 
@@ -48,3 +62,6 @@ $\operatorname{atan2}(B, A) = \begin{cases}
 +\dfrac{3\pi}{2} & \qquad B < 0 , A = 0 \\
 \text{undefined} & \qquad B = 0, A = 0
 \end{cases}$
+
+\subsubsection{Erzwungene Schwingung}
+
