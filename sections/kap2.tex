@@ -2,7 +2,30 @@
 %TODO by Selina/Christian
 
 \subsection{Begriffe}
-Phasenraum/Vektorfeld usw...
+\subsubsection{Vektorfeld und Trajektorie}
+Hat man ein autonomes System folgender Art:
+\begin{equation*}
+\frac{d}{dt}x(t) = f(x(t))
+\end{equation*}
+Dann ist $x(t) = [x_1(t), x_2(t)]$ eine Lösung sowie ein Vektor, welcher von der Zeit t abhängt. Die Funktion $f$ ordnet dem Vektor $x$ den Vektor $f(x) = [f_1(x_1,x_2),f_2(x_1,x_2)]$ (= partielle Ableitung in $x_1$ und $x_2$) zu. 
+Die Darstellung dieser Vektoren $f_1$ und $f_2$ in der $x_1,x_2$ Ebene (= \textbf{Phasenraum}) ist das assoziierte Vektorfeld. 
+Die entstehenden Kurven in der Phasenebene werden \textbf{Trajektorien} genannt. 
+Der \textbf{Zustandsraum} $x_1,x_2,t$ beinhaltet alle Lösungskurven eines autonomen Systems.
+Die räumlichen Lösungskurven im Zustandsraum sind translationsinvariant, d.h eine Verschiebung in t-Richtung liefert wieder eine Lösungskurve des Systems. Bei festen Anfangswerten $x_0, y_0$ unterscheiden sich Lösungskurven nur durch eine Verschiebung in t-Richtung. Die Normalprojektion einer solchen Schar paralleler Lösungen in den Phasenraum ist eine Trajektorie. 
+Im Phasenraum interessieren vor allem die singulären Punkte. Die Nullstellen des Feldes, sind die Normalprojektionen der stationären Lösungen, d.h. den Gleichgewichtslösungen, in den Phasenraum. 
+Die folgenden Bilder zeigen das Vektorfeld sowie verschiedene Trajektorien (sprich verschiedene Anfangsbedingungen) im Phasenportrait.\\  
+Der Zustandsraum wäre die Darstellung des Phasenraumes mit einer dritten Achse (ins Blatt hinein), welche den zeitlichen Verlauf darstellt.\\
+\subsubsection{Richtungsfeld und Lösung - Begriff der Lösung}
+Die Lösung der Differentialgleichung $\frac{d}{dt}x(t) = f(t,x(t))$ ist eine parametrisierte Kurve x(t). Die Ableitung nach t ist demnach der Tangentenvektor an diese Kurve. Die Diffgleichung enthält demnach die Information über die Tangentenvektoren an ihre Lösungskurven. 
+Das bedeutet, auch ohne die Lösung können wir die rechte Seite der Gleichung - d.h. die Tangentenvektoren - zeichnen. Das Lösen der Gleichung ist schlussendlich nur das Einpassen von Kurven in dieses Vektorfeld. Solche Kurven sind die Trajektorien der Gleichung. Die Trajektorie ist jedoch \textbf{nicht} die Lösung, da als Beispiel die Zeitkomponente fehlt. Hätte man (t,x(t)), hätte man die gesamte Lösung. 
+\begin{minipage}[h]{0.35\textwidth} 
+	\includegraphics[width=0.9\textwidth]{images/Vektorfeld.png}
+\end{minipage}
+\begin{minipage}[h]{0.35\textwidth}
+	\includegraphics[width=1.0\textwidth]{images/Phasenportrait.png}
+\end{minipage}
+
+
 \subsection{Bilanzieren}
 \input{sections/kap2_Matrizen}
 \input{sections/kap2_Stabilitaet_LinearerSysteme}
