@@ -2,5 +2,143 @@
 $x' = Ax + b$\\
 Kritische Punkte: $x' = Ax + b = 0$ Gleichgewicht: $b = -Ax$ oder $x = -A^{-1}*b$\\
 
+
+\subsection{Superpositionsprinzip}
+Gegeben ist folgendes lineares homogenes Gleichungssystem:
+\begin{equation*}
+\frac{d}{dt}x(t) = A(t)x(t)
+\end{equation*}
+Das Superpositionsprinzip sagt, dass die Linearkombination der beiden Lösungen $x_1(t)$ und $x_2(t)$ auch wieder eine Lösung des Differentialgleichungssystems ist. 
+\begin{equation*}
+	x(t) = c_1 x_1(t) + c_2 x_2(t)
+\end{equation*}
+Wobei $c_1$ und $c_2$ beliebige Skalare sind. 
+\subsection{Lineare Unabhängigkeit}
+Die lineare Unabhängigkeit der beiden Lösungen $x_1(t)$ und $x_2(t)$ kann mit Hilfe der \textbf{Wronskideterminante} geprüft werden. 
+\begin{equation*}
+	W(t) = det[X(t)] =    
+	\begin{vmatrix} 
+	        x_{11}(t) & x_{12}(t)\\ 
+	        x_{21}(t) & x_{22}(t)\\   
+	\end{vmatrix}
+\end{equation*}
+Sind $x_1(t)$ und $x_2(t)$ \textbf{linear unabhängig}, dann gilt $W(t) \neq 0$ für alle $t \in I$. \\
+Sind $x_1(t)$ und $x_2(t)$ \textbf{linear abhängig}, dann gilt $W(t) = 0$ für alle $t \in I$. \\
+Jede Lösung $\Phi(t)$ kann als Linearkombination eines Fundamentalsystems zweier Lösungen $x_1(t)$ und $x_2(t)$ dargestellt werden. Diese Linearkombination wird als die allgemeine Lösung eines linearen homogenen Systems bezeichnet. 
+\subsection{Fluss eines Vektorfeldes}
+Gegeben ist ein autonomes lineares homogenes System mit einer nxn Matrix A:
+\begin{equation*}
+\frac{d}{dt}x(t) = A(t)x(t)
+\end{equation*}
+Die Matrix $A(t)$ besitzt verschiedene reelle Eigenwerte. Aus den Eigenwerten $\lambda_1$ und $\lambda_2$ und ihren zugehörigen Eigenvektoren $\nu_1$ und $\nu_2$ erhalten wir ein System von Fundamentallösungen: 
+\begin{equation*}
+x_1(t) = e^{\lambda_1t}\nu_1\\
+\end{equation*}
+\begin{equation*}
+x_2(t) = e^{\lambda_2t}\nu_2
+\end{equation*}
+Die Fundamentallösungen $x_1(t)$ und $x_2(t)$ bilden die Spalten der Fundamentalmatrix $X(t)$:
+\begin{equation*}
+	X(t) =     
+	\begin{vmatrix} 
+	        x_{11}(t) & x_{12}(t)\\ 
+	        x_{21}(t) & x_{22}(t)\\   
+	\end{vmatrix}
+\end{equation*}
+Diese Fundamentalmatrix genügt folgender Differentialgleichung: 
+\begin{equation*}
+\frac{d}{dt}X(t) = A(t)X(t)
+\end{equation*}
+Fluss? Versteh ich nicht so ganz. 
+
+Die Lösung x(t) des Anfangswertproblems $x(t_0) x_0$ kann mit Hilfe einer Fundamentalmatrix X(t) dargestellt werden. Die allgemeine Lösung der Diffgleichung $\frac{d}{dt}x(t) = A(t)x(t)$ kann als Superposition von Fundamentallösungen  geschrieben werden.\\
+\begin{equation*}
+x(t) = c_1 x_1(t) + ... + c_n x_n(t)
+\end{equation*}
+\begin{equation*}
+x(t) = X(t)c
+\end{equation*}
+Mit $x_0 = X(t_0)$ und $det(X(t_0)) \neq 0$
+\begin{equation*}
+c = X(t_0)^{-1}x_0
+\end{equation*}
+In obige Gleichung eingesetzt, ergibt: 
+\begin{equation*}
+x(t) = X(t)X(t_0)^{-1}x_0
+\end{equation*}
+Wählt man nun die Fundamentallösungen $x_1(t) ... x_n(t)$ zu den Anfangsbedingungen $x_1(t_0)=e_1, ..., x_n(t_0)=e_n$, wobei $e_1...e_n$ die kanonischen Basisvektoren des Vektorraumes $R^n$ sind, erhalten wir die zugehörige Fundamentalmatri:
+\begin{equation*}
+\Phi(t_0) = E
+\end{equation*}
+Es folt aus dem Eindeutigkeitssatz, dass die Lösung x(t) des Anfangswertproblems $x(t_0) = x_0$ mit Hilfe dieser speziellen Fundamentalmatrix $\Phi(t)$, folgende Darstellung besitzt: 
+\begin{equation*}
+x(t) = \Phi(t)x_0
+\end{equation*}
+mit $\Phi(t) = X(t)X(t_0)^{-1}$. In Worten: Die Matrix A ordnet jedem Vektor x einen Vektor A(x) des Vektorfeldes zu. Der Fluss $\Phi(t)$ transformiert jeden Anfangszustand $x_0$ längs der druch $x_0$ verlaufenden Trajektorie in den Zustand x(t) zur Zeit t. 
+Das Vektorfeld lässt sich auch aus dem Fluss zurück gwinnen, indem die Trajektorie $\phi(t) = \Phi(t)x$ nach er Zeit an der Stelle $t=0$ abgeleitet wird. 
+\begin{equation*}
+\frac{d}{dt}\Phi(t)x = A(x)
+\end{equation*}
+\subsection{Degenerierte Matrizen}
+Ist A degeneriert, bedeutet dies, dass sie mindestens einen Eigenwert $\lambda$ mit einer geometrischen Vielfachheit besitzt, die kleiner als seine algebraische Vielfachheit ist. 
+Das bedeutet, dass die linear unabhängigen Eigenvektoren der Matrix A den Raum $R^n$ nicht ausschöpft. 
+\subsubsection{Theorem}
+Ist $\lambda$ ein Eigenwert von A mit der algebraischen Vielfachheit m, dann besitzt die Gleichung: 
+\begin{equation*}
+(A-\lambda E)^m\nu = 0
+\end{equation*}
+eine Anzahl m linear unabhängige Lösungen $b_1$ bis $b_m$ und für k = 1...m sind die vektorwertigen Funktionen
+\begin{equation*}
+x_k(t) = e^{\lambda t}{b_k + \frac{t}{1!}(A-\lambda E) + ... + \frac{t^{m-1}}{(m-1)!}(A-\lambda E)^{m-1}b_k}
+\end{equation*}
+linear unabhängige Lösungen der Differentialgleichung. 
+\subsection{Beispiel}
+Folgende Matrix A ist gegeben: 
+\begin{equation*}
+	A =     
+	\begin{vmatrix} 
+	        4 & 6 & 6 \\ 
+	        1 & 3 & 2 \\
+	        -1 & -5 & -2    
+	\end{vmatrix}
+\end{equation*}
+Die Matrix besitzt den einfachen Eigenwert $\lambda_1 = 1$ und den doppelten Eigenwert $\lambda_2=2$. Für den ersten Eigenwert erhält man den Eigenvektor $\nu_1 = [4 1 3]$ sowie die dazugehörige Lösung $x_1(t) = e^{\lambda_1 t}\nu_1$.\\
+Zum zweiten Eigenwert gehört der Eigenvektor $\nu_2 = [3 1 -2]$, um zwei linear unabhängige Lösungen zu erhalten, halten wir uns an die Aussagen des obigen Theorems:\\ 
+\textbf{Schritt 1:} \\
+Man bestimme die beiden linear unabhängigen Lösungen $b_1$ und $b_1$ der Gleichung $(A-\lambda E)^2 \nu =0$.
+Die Lösungen sind $b_1 =  [3 1 0]$ und $b_1 =  [0 0 1]$. \\
+\textbf{Schritt 2:} \\
+Mit Hilfe der beiden Vektoren bestimmen wir die beiden Lösungen: \\
+$x_2(t) = e^{\lambda_2 t} \cdot {b_1 + \frac{t}{1!}(A-\lambda_2 E)b_1}$\\
+$x_3(t) = e^{\lambda_2 t} \cdot {b_2 + \frac{t}{1!}(A-\lambda_2 E)b_2}$\\
+\textbf{Schritt 3:} \\
+Die Fundamentalmatrix X(t) aus den drei berechneten Lösungen zusammensetzen:\\
+\begin{equation*}
+	X(t) =     
+	\begin{vmatrix} 
+	        x_{11} & x_{21} & x_{31}\\ 
+	        x_{12} & x_{22} & x_{32}\\
+	        x_{13} & x_{23} & x_{33}    
+	\end{vmatrix}
+\end{equation*}
+\subsection{Matrixexponential}
+Gegeben ist die Differentialgleichung:
+\begin{equation*}
+\frac{d}{dt}x(t) = A(t)x(t)
+\end{equation*}
+mit Anfangbedingung $x(0) = x_0$ und der konstanten nxn Matrix A. Mit Hilfe des Flusses $\Phi(t)$ kann die Lösung dieses Problems dargestelltw erden als: 
+\begin{equation*}
+x(t) = \Phi(t)x_0
+\end{equation*}
+Bei einer skalaren Differentialgleichung $\frac{d}{dt}x(t) = ax(t)$ ist die Lösung bei gegebener Anfangsbedingung: $x(t) = e^{at}x_0$. Wenn wir diese Lösung nun mit $\Phi(t)$ vergleichen, stellt sich heraus, dass der Fluss eines nxn Systems ebenfalls eine Exponentialdarstellung besitzt. 
+Ist A eine konstante nxn Matrix, dann besittz der Fluss $\Phi(t)$, der vom Vektorfeld erzeugt wird, folgende Darstellung als Matrixexponential: 
+\begin{equation*}
+\Phi(t) = e^{At} = X(t)X(0)^{-1}
+\end{equation*}
+Der Fluss wie auch das Matrixexponential können also mit Hilfe der Fundamentalmatrix X(t) und der entsprechenden Anfangsbedingung berechnet werden.
+Damit hat die Lösung x(t) des Anfangswertproblems $x(0) = x_0$ folgende Form: 
+\begin{equation*}
+x(t) = e^{At}x_0
+\end{equation*}
 ToDo:\\
 -Wronzki-Determinante / Fundamentalmatrix 
