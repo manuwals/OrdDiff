@@ -1,5 +1,119 @@
 \section{Lineare Algebra / Matrixexponential}
 %TODO by Selina
 -Transformationen\\
--Jordan Normalform / Berechnung mit TI89\\
+-Jordan Normalform\\
 -Matrixexponential 
+
+\subsection{Berechnung Jordan Normalform mit TI89}
+Matrix:
+$\begin{bmatrix} %phantom is for spacing
+	2 & \phantom{-}0 & \phantom{-}5\\
+	5 & -3 & \phantom{-}6\\
+	0 & \phantom{-}0 & -3\\
+\end{bmatrix}$
+
+Step 1: Save Matrix\\{}
+[2,0,5;5,-3,6;0,0,-3] $\rightarrow$ a\\
+\hspace*{2cm}$\begin{bmatrix} %phantom is for spacing
+	2 & 0 & 5\\
+	5 & -3 & 6\\
+	0 & 0 & -3\\
+\end{bmatrix}$
+
+Step 2: Eigenwerte\\
+eigVl(a)\\
+\hspace*{2cm} \{-3,2,-3\}
+
+Step 3: Basisvektor $b_1 \rightarrow (A- \lambda_1 I)^n = 0$ für $n=\{1\}$\\
+\textcircled{1} rref(A-2*identity(3))\\
+\hspace*{2cm}$\begin{bmatrix}
+	1 & -1 & 0\\
+	0 & 0 & 1\\
+	0 & 0 & 0\\
+\end{bmatrix}$\\
+
+$\begin{bmatrix}
+	1\;x_1 & -1\;x_2 & 0\;x_3\\
+	0\;x_1 & 0\;x_2 & 1\;x_3\\
+	0\;x_1 & 0\;x_1 & 0\;x_3\\
+\end{bmatrix} = \begin{bmatrix}
+	0\\
+	0\\
+	0\\
+\end{bmatrix} \rightarrow x_1-x_2=0 \; ; \; x_3=0 \rightarrow$ Mögliche Lösung: b1 = $\begin{bmatrix}
+	1\\
+	1\\
+	0\\
+\end{bmatrix}$(da neu, n=max)\\
+
+Step 4: Basisvektor $b_2$ und $b_3 \rightarrow (A- \lambda_2 I)^n = 0$ für $n=\{1,2\}$\\
+\textcircled{2} rref(A+3*identity(3))\\
+\hspace*{2cm}$\begin{bmatrix}
+	1 & 0 & 0\\
+	0 & 0 & 1\\
+	0 & 0 & 0\\
+\end{bmatrix}$\\
+
+$\begin{bmatrix}
+	1\;x_1 & 0\;x_2 & 0\;x_3\\
+	0\;x_1 & 0\;x_2 & 1\;x_3\\
+	0\;x_1 & 0\;x_2 & 0\;x_3\\
+\end{bmatrix} = \begin{bmatrix}
+	0\\
+	0\\
+	0\\
+\end{bmatrix} \rightarrow x_1=0 \; ; \; x_3=0 \rightarrow$ Mögliche Lösung: $\begin{bmatrix}
+	0\\
+	10\\
+	0\\
+\end{bmatrix}$ (Nicht $b_2$, n$\neq$max!!)\\
+
+\textcircled{3} rref((A+3*identity(3))\textasciicircum2)\\
+\hspace*{2cm}$\begin{bmatrix}
+	1 & 0 & 1\\
+	0 & 0 & 0\\
+	0 & 0 & 0\\
+\end{bmatrix}$\\
+
+$\begin{bmatrix}
+	1\;x_1 & 0\;x_2 & 1\;x_3\\
+	0\;x_1 & 0\;x_2 & 0\;x_3\\
+	0\;x_1 & 0\;x_2 & 0\;x_3\\
+\end{bmatrix} = \begin{bmatrix}
+	0\\
+	0\\
+	0\\
+\end{bmatrix} \rightarrow x_1 + x_3=0 \rightarrow$ Mögliche Lösungen: $\begin{bmatrix}
+	0\\
+	1\\
+	0\\
+\end{bmatrix} \; ; \; b3 = \begin{bmatrix}
+	-1\\
+	0\\
+	1\\
+\end{bmatrix}$(da neu, n=max)\\
+
+Step 5: Fehlender Basisvektor $b_2=N_2*b_3$\\
+(A+3*identity(3))*[-1;0;1]\\
+\hspace*{2cm}$\begin{bmatrix}
+	0\\
+	1\\
+	0
+\end{bmatrix}$\\
+
+Step 6: Zusammensetzen
+$T=\begin{bmatrix}
+	b_1 & b_2 & b_3
+\end{bmatrix}$ sowie $J=T^{-1}*A*T$\\{}
+[1,0,-1;1,1,0;0,0,1]$\rightarrow$ t\\
+\hspace*{2cm}$\begin{bmatrix}
+	1 & 0 & -1\\
+	1 & 1 & 0\\
+	0 & 0 & 1\\
+\end{bmatrix}$\\
+t\textasciicircum-1*a*t\\
+\hspace*{2cm}$\begin{bmatrix}
+	2 & 0 & 0\\
+	0 & -3 & 1\\
+	0 & 0 & -3\\
+\end{bmatrix} \rightarrow $ Jordan-Form!
