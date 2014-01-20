@@ -13,6 +13,22 @@ Das Superpositionsprinzip sagt, dass die Linearkombination der beiden Lösungen 
 	x(t) = c_1 x_1(t) + c_2 x_2(t)
 \end{equation*}
 Wobei $c_1$ und $c_2$ beliebige Skalare sind. 
+Das Prinzip kann auch für Systeme höherer Ordnung verwendet werden. Hier ein \textbf{Beispiel} für eine Differentialgleichung zweiter Ordnung: \\
+Gegeben: $t^2y''(t)-4ty'(t)+6y(t)=0$, $t>0$, $y_1(t)=t^2$\\
+Gesucht: Eine zweite Lösung $y_2(t)$, so dass ${y_1(t),y_2(t)}$ ein Fundamentalsystem ergeben. \\
+Vorgehensweise: \\
+\textbf{Schritt 1:}\\
+Prüfen, ob $y_1(t)$ wirklich Lösung des Systems ist. \\
+\textbf{Schritt 2:}\\
+Für die zu bestimmende Lösung $y_2(t)$ kommt folgender Ansatz zum Zug: $y_2(t) = v(t)y_1(t)$.\\
+\textbf{Schritt 3:}\\
+Ansatz $v(t)y_1(t)$ in Differentialgleichung einsetzen. Die Gleichung so weit es geht umformen und danach nach $v(t)$ auflösen. Wenn $v(t)$ bekannt ist, kann $y_2(t)$ berechnet werden. \\
+\textbf{Schritt 4:}\\
+Auf Grund der beiden Lösungen, kann die Fundamentalmatrix $Y(t) =
+\begin{vmatrix} 
+	        y_{1}(t) & y_{2}(t)\\ 
+	        y'_{1}(t) & y'_{2}(t)\\   
+\end{vmatrix} $ berechnet werden und mit Hilfe der Wronskideterminante geprüft werden, ob die Lösungen linear unabhängig sind ($det(W) \neq 0$). 
 \subsection{Lineare Unabhängigkeit}
 Die lineare Unabhängigkeit der beiden Lösungen $x_1(t)$ und $x_2(t)$ kann mit Hilfe der \textbf{Wronskideterminante} geprüft werden. 
 \begin{equation*}
@@ -80,9 +96,9 @@ Das Vektorfeld lässt sich auch aus dem Fluss zurück gwinnen, indem die Trajekt
 \frac{d}{dt}\Phi(t)x = A(x)
 \end{equation*}
 \subsection{Degenerierte Matrizen}
+TODO: Besseres Beispiel aus Kurztest nehmen. \\
 Ist A degeneriert, bedeutet dies, dass sie mindestens einen Eigenwert $\lambda$ mit einer geometrischen Vielfachheit besitzt, die kleiner als seine algebraische Vielfachheit ist. 
-Das bedeutet, dass die linear unabhängigen Eigenvektoren der Matrix A den Raum $R^n$ nicht ausschöpft. 
-\subsubsection{Theorem}
+Das bedeutet, dass die linear unabhängigen Eigenvektoren der Matrix A den Raum $R^n$ nicht ausschöpft.\\
 Ist $\lambda$ ein Eigenwert von A mit der algebraischen Vielfachheit m, dann besitzt die Gleichung: 
 \begin{equation*}
 (A-\lambda E)^m\nu = 0
@@ -140,5 +156,3 @@ Damit hat die Lösung x(t) des Anfangswertproblems $x(0) = x_0$ folgende Form:
 \begin{equation*}
 x(t) = e^{At}x_0
 \end{equation*}
-ToDo:\\
--Wronzki-Determinante / Fundamentalmatrix 
