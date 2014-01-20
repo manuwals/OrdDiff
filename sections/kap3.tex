@@ -1,5 +1,84 @@
 \section{Kapitel 3}
+\subsection{Lineare homogene Differentialgleichung 2. Ordnung}
+DGL: $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
+Ansatz: $y(t) = e^{\lambda t}$\\
+Einsetzen in DGL $\rightarrow$ Charakteristisches Polynom: $a\lambda^2 + b\lambda +c =0$\\
+Nullstellen der Gleichung bestimmen: $\lambda_1,\lambda_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$\\
+Fall 1:\\ 
+$\lambda_1,\lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda_1 t}, y_2(t) = e^{\lambda_2 t}$\\
+Falls 2:\\ 
+$\lambda = \lambda_1 = \lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda t}, y_2(t) = te^{\lambda t}$\\
+Fall 3:\\ 
+$\lambda_1,\lambda_2* =$ komplex $\rightarrow z_1(t) = e^{\lambda_1 t}, z_2(t) = e^{\lambda_2 t}$\\
+$y_1(t) = Real(z_1)$ und $y_2(t) = Imag(z_1)$\\
+Allgemeine Lösung: $y(t) = c_1y_1(t) + c_2y_2(t)$\\
+Freiheitsgrade $c_1,c_2$ mit Hilfe der gegebenen Anfangsbedinungen bestimmen. 
+\subsection{Umwandlung in ein System 1. Ordnung}
+$a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
+Substitution:\\
+$x_1(t) = y(t)$\\
+$x_2(t) = y'(t)$\\
+$
+	\begin{vmatrix} 
+	        y'(t)\\ 
+	        y''(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        x_1'(t)\\ 
+	        x_2'(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        x_2(t)\\ 
+	        -\frac{b}{a} - \frac{c}{a}x_1(t)\\   
+	\end{vmatrix}
+$\\
+DGL System:\\
+\begin{equation*}
+x'(t) = Ax(t)
+\end{equation*}
+\begin{equation*}
+	\begin{vmatrix} 
+	        x_1'(t)\\ 
+	        x_2'(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        0 && 1\\ 
+	       -\frac{c}{a} && -\frac{b}{a}\\   
+	\end{vmatrix}
+	\begin{vmatrix} 
+	        x_1(x)\\ 
+	        x_2(x)\\   
+	\end{vmatrix}
+\end{equation*}
 
+Das DGL System kann nun wie ein homogenes, autonomes DGL System 1. Ordnung gelöst werden. Die Lösung für $x_1(t)$ ist geraade die Lösung der DGL 2. Ordnung, weil $x_1(t) = y(t)$, die Lösung $x_2(t)$ kann als Zwischenresultat betrachtet werden. 
+Hat das DGL System 2.Ordnung noch eine Störung $g(t)$, so sieht das äquivalente System 1. Ordnung wie folgt aus:\\
+\begin{equation*}
+x'(t) = Ax(t) + g(t)
+\end{equation*}
+\begin{equation*}
+	\begin{vmatrix} 
+	        x_1'(t)\\ 
+	        x_2'(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        0 && 1\\ 
+	       -\frac{c}{a} && -\frac{b}{a}\\   
+	\end{vmatrix}
+	\begin{vmatrix} 
+	        x_1(t)\\ 
+	        x_2(t)\\   
+	\end{vmatrix}
+	+
+	\begin{vmatrix} 
+	        0\\ 
+	        g(t)\\   
+	\end{vmatrix}
+\end{equation*}
 \subsection{Inhomogen 2. Ordnung}
 \begin{tabbing}
 1. Homogenes System lösen \= $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
@@ -17,7 +96,54 @@
 \> $s = [0,1,2]$, so dass kein Summand Lösung der homogenen Gleichung.\\
 3. Zusammensetzen \> $y(t)=y_h(t)+y_p(t)$
 \end{tabbing}
+\subsection{Variation der Konstanten}
+Hat man eine lineare, inhomogene Differentialgleichung 2. Ordnung mit folgender Struktur:\\
+\begin{equation*}
+y''(t) + p(t)y'(t) + q(t)y(t) = g(t)
+\end{equation*}
 
+Um die Variation der Konstanten verwenden zu  können, muss das System in ein System 1. Ordnung gebracht werden:\\
+\begin{equation*}
+x'(t) = A(t)x(t) + b(t)
+\end{equation*}
+\begin{equation*}
+	\begin{vmatrix} 
+	        y'(t)\\ 
+	        y''(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        x_1'(t)\\ 
+	        x_2'(t)\\   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        0 && 1\\ 
+	       -q(t) && -p(t)\\   
+	\end{vmatrix}
+	\begin{vmatrix} 
+	        x_1(t)\\ 
+	        x_2(t)\\   
+	\end{vmatrix}
+	+
+	\begin{vmatrix} 
+	        0\\ 
+	        g(t)\\   
+	\end{vmatrix}
+\end{equation*}
+In einem ersten Schritt wird die homogene Gleichung gelöst und wir erhalten zwei Fundementallösungen $y_1(t)$ und $y_2(t)$, damit erhalten wir eine Fundamentalmatrix der Form: \\
+\begin{equation*}
+X(t) = 
+	\begin{vmatrix} 
+	        y_1(t) && y_2(t)\\ 
+	        y_1'(t) && y_2'(t)\\ 
+	\end{vmatrix}
+\end{equation*}
+Um nun die partikuläre Lösung zu erhalten, verwenden wir folgende Gleichung: 
+\begin{equation*}
+y_P(t) = X(t) \int{X(t)^{-1}b(t)dt}
+\end{equation*}
+Die gesamte Lösung ergibt sich dann wieder aus der Summe der homogenen sowie der partikulären Lösung. 
 \subsection{Schwingungen}
 
 \begin{tabular}{|l|l|}

@@ -1,11 +1,93 @@
 \section{Kapitel 1}
 
-\subsection{Symbolisch}
+\subsection{Differentialgleichungen 1. Ordnung - Symbolische Lösungsverfahren}
+\subsection{Gleichgewichtslösungen}
+Die Gleichgewichtslösungen sind diejenigen Punkte, in welchen die Ableitung verschwindet:
+\begin{equation*}
+	\diffp{}{t}y(t) = 0
+\end{equation*}
+\subsection{Phasengerade und Integralkurven}
+Bei der Phasengerade werden die Gleichgewichtslösungen in Funktion der Ableitung eingetragen. Dadurch kann die Stabilität eines Systems bestimmt werden. 
+
+\subsection{Bifurkationen}
+Gegeben ist eine autonome Differentialgleichung mit reellen Parametern.
+
+\begin{equation*}
+	\diffp{}{t}y(t) = f(a,y(t))
+\end{equation*}
+
+Suche die Gleichgewichtslösungen und unterscheide abhängig vom Parameter a in folgenden 3 Fällen:\\
+\begin{itemize}
+\item $a<0$
+\item $a=0$
+\item $a>0$
+\end{itemize}
+Für jeden dieser Fälle wird die Phasengerade gezeichnet und daraus kann man dann das entsprechende Bifurkationsdiagramm zeichnen. 
+
+\begin{minipage}[h]{0.35\textwidth} 
+	\includegraphics[width=1.0\textwidth]{images/Phasengerade.png}
+\end{minipage}
+\begin{minipage}[h]{0.35\textwidth}
+	\includegraphics[width=1.0\textwidth]{images/Richtungsfeld.png}
+\end{minipage}
+\begin{tabular}{p{1.8cm}p{5cm}}
+	$y(t) = -2$: & instabiel \\
+	$y(t) = 0$: & semistabil\\
+	$y(t) = 2$: & asymtotisch stabil\\
+\end{tabular}
+
+\subsection{Bifurkationsdiagramm}
+\begin{minipage}[h]{0.35\textwidth}
+$y'=y(a-y)$\\
+Kritische Punkte in Abhängikeit von $a$\\
+\begin{tabbing}
+Ausgezogen: \= Asymptotisch Stabil\\
+Gestrichelt: \> Instabil\\
+Zentrum: \> Semistabil\\
+\end{tabbing}
+\end{minipage}
+\begin{minipage}[h]{0.35\textwidth}
+	\includegraphics[width=1.0\textwidth]{images/Bifurkationsdiagramm.png}
+\end{minipage}
 
 \subsubsection{Allgemein 1. Ordnung}
 $\dfrac{d}{dt}y(t)=f(t,y(t)) \qquad y(t_0)=y_0$\\
 Eindeutige Lösung $\varphi(t)$ im Intervall falls $f(t,y(t))$ und $\dfrac{d \; f(t,y(t))}{dt}$ stetig im Intervall.
-\subsubsection{Linear DGL}
+\subsection{Lineare homogene autonome DGL 1. Ordnung}
+$\dfrac{d}{dt}y(t)+ay(t)=0 \qquad y(t_0)=y_0$\\
+Ansatz: $y(t) = e^{\lambda t}$\\
+Einsetzen in DGL: $\lambda e^(\lambda t) + ae^(\lambda t) = 0$\\
+Charakteristisches Polynom: $\lambda = -a$\\
+Allgemeine Lösung: $y(t) = ce^{-ax}$\\
+Freiheitsgrad c mit Anfangwert bestimmen. 
+\subsection{Lineare inhomogene autonome DGL 1. Ordnung}
+$\dfrac{d}{dt}y(t)+ay(t) = g(t)$\\
+Den inhomogenen Ansatz möglichst gleich der Inhomogenität g(t) wählen, aber so dass $y_P$ linear unabhängig von der homogenen Lösung $y_H$ ist. (Siehe dazu die Tabelle für lineare inhomogene Gleichungen 2.Ordnung). \\
+Vorgehen:\\
+1. Schritt: Einsetzen in inhomogene DGL und Koeffizienten mit Hilfe des Koeffizientenvergleichs bestimmen. $\rightarrow y_p(t)$\\
+2. Schritt: $y(t) = y_H(t)+y_P(t)$ \\
+\subsection{Variation der Konstanten}
+Gegeben ist ein lineares, inhomogenes System 1. Ordnung: \\
+\begin{equation*}
+\frac{d}{dt}x(t) = Ax(t) + b(t) 
+\end{equation*}
+Als erstes werden die Lösungen der homogenen Gleichung gelöst, wir erhalten für jeden Eigenwert und Eigenvektor eine Lösung: \\
+$x_1(t) = e^{\lambda_1t}v_1,x_2(t) = e^{\lambda_2t}v_2...x_n(t) = e^{\lambda_nt}v_n$\\
+Diese Lösungen ergeben unsere Fundamentalmatrix:\\
+\begin{equation*}
+X(t) = 
+	\begin{vmatrix} 
+	        x_1(t) && x_2(t) && ... && x_n(t)\\    
+	\end{vmatrix}
+\end{equation*}
+
+Mit Hilfe der Fundamentalmatrix können wir nun die partikuläre Lösung des Systems bestimmen:\\
+\begin{equation*}
+y_P(t) = X(t) \int{X(t)^{-1}b(t)dt}
+\end{equation*}
+Die gesamte Lösung ist nun die Summe aus der homogenen sowie der partikulären Lösung.
+
+\subsubsection{Lineare DGL}
 \begin{tabular}{p{6cm}p{2cm}p{10.5cm}}
 \textbf{Form:} $y'(t) + p(t) \cdot y(t) = g(t)$ &
 \textbf{Vorgehen:}              &
@@ -41,7 +123,7 @@ Lösung existiert und eindeutig falls $p(t)$ und $g(t)$ stetig.\\
 \end{tabular}
 \textbf{Bsp}: $(9x^2 + y -1)dx - (4y -x)dy = 0 \quad \Longrightarrow \quad  \underbrace{9x^2 +y -1}_{M(x,y)} + \underbrace{(-(4y -x))}_{N(x,y)} \cdot \diffp{y}{x} = 0$
 
-\subsection{Nummerisch}
+\subsection{Numerisch}
 \subsubsection{Fehler}
 
 \begin{tabbing}
@@ -75,41 +157,3 @@ k_{i,2} = f(t_{i} + \dfrac{h}{2},y_{i} + \dfrac{h}{2}k_{i,1}) \qquad
 k_{i,3} = f(t_{i} + \dfrac{h}{2},y_{i} + \dfrac{h}{2}k_{i,2}) \qquad 
 k_{i,3} = f(t_{i} + h,y_{i} + h \: k_{i,2}) \qquad$\\
 $e_n \approx h^5 \qquad E_n \approx h^4$
-\subsection{Bifurkationen}
-Gegeben ist eine autonome Differentialgleichung mit reellen Parametern.
-
-\begin{equation*}
-	\diffp{}{t}y(t) = f(a,y(t))
-\end{equation*}
-
-Gesucht die Kritischen punkte die sogenannten Gleichgewichtslösungen. Diese sind wie folgt definiert:
-\begin{equation*}
-	\diffp{}{t}y(t) = 0
-\end{equation*}
-Die Gleichgewichtslösungen wird in 3 Fälle unterschieden:\\
-
-\begin{minipage}[h]{0.35\textwidth} 
-	\includegraphics[width=1.0\textwidth]{images/Phasengerade.png}
-\end{minipage}
-\begin{minipage}[h]{0.35\textwidth}
-	\includegraphics[width=1.0\textwidth]{images/Richtungsfeld.png}
-\end{minipage}
-\begin{tabular}{p{1.8cm}p{5cm}}
-	$y(t) = -2$: & instabiel \\
-	$y(t) = 0$: & semistabil\\
-	$y(t) = 2$: & asymtotisch stabil\\
-\end{tabular}
-
-\subsection{Bifurkationsdiagramm}
-\begin{minipage}[h]{0.35\textwidth}
-$y'=y(a-y)$\\
-Kritische Punkte in Abhängikeit von $a$\\
-\begin{tabbing}
-Ausgezogen: \= Asymptotisch Stabil\\
-Gestrichelt: \> Instabil\\
-Zentrum: \> Semistabil\\
-\end{tabbing}
-\end{minipage}
-\begin{minipage}[h]{0.35\textwidth}
-	\includegraphics[width=1.0\textwidth]{images/Bifurkationsdiagramm.png}
-\end{minipage}
