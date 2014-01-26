@@ -79,6 +79,44 @@ x'(t) = Ax(t) + g(t)
 	        g(t)\\   
 	\end{vmatrix}
 \end{equation*}
+Transformation 3.Ordnung $y'''(t) + p(t)y''(t)+q(t)'(t)+r(t)y(t)=g(t)$:\\
+\begin{equation*}
+	\begin{vmatrix} 
+	        x_1(t)\\ 
+	        x_2(t)\\
+	        x_3(t)   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        y(t)\\ 
+	        y'(t)\\
+	        y''(t)   
+	\end{vmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{vmatrix} 
+	        x_1'(t)\\ 
+	        x_2'(t)\\
+	        x_3'(t)   
+	\end{vmatrix}
+	=
+	\begin{vmatrix} 
+	        0 && 1 && 0\\ 
+	        0 && 0 && 1\\
+	        -r(t) && -q(t) && -p(t)   
+	\end{vmatrix}
+		\begin{vmatrix} 
+		        x_1(t)\\ 
+		        x_2(t)\\
+		        x_3(t)   
+		\end{vmatrix}
+		+
+			\begin{vmatrix} 
+			        0)\\ 
+			        0\\
+			        g(t)   
+			\end{vmatrix}
+\end{equation*}
 \subsection{Inhomogen 2. Ordnung}
 \begin{tabbing}
 1. Homogenes System lösen \= $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
@@ -144,6 +182,20 @@ Um nun die partikuläre Lösung zu erhalten, verwenden wir folgende Gleichung:
 y_P(t) = X(t) \int{X(t)^{-1}b(t)dt}
 \end{equation*}
 Die gesamte Lösung ergibt sich dann wieder aus der Summe der homogenen sowie der partikulären Lösung. 
+\subsection{Zweite Lösung finden für DGL 2. Ordnung}
+Gegeben: Diffgleichung 2. Ordnung mit Lösung, suche eine zweite Lösung.\\
+Vorgehen:\\
+1. Prüfe, ob erste Lösung $y_1(t)=t^2$ für $t^2y''(t) -4ty(t) +6y(t) = 0$ wirklich Lösung ist. \\
+2. Ansatz $y_2(t)=v(t)\cdot y_1(t)$ in DGL einsetzen. \\
+3. $v''(t),v'(t),v(t)$ ordnen und $v(t)$ berechnen. \\
+4. $y_2(t)=v(t)\cdot y_1(t)$ berechnen und prüfen, obs stimmt.\\
+5. Fundamentalmatrix $Y(t) = 	\begin{vmatrix} 
+	        						y_1(t) && y_2(t)\\ 
+	        						y_1'(t) && y_2'(t)\\ 
+								\end{vmatrix}$
+berechnen und Wronskideterminante prüfen. 
+
+
 \subsection{Schwingungen}
 
 \begin{tabular}{|l|l|}
