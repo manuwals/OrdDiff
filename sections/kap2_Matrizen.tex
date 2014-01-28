@@ -1,8 +1,31 @@
 \subsection{Matrixdarstellung}
 $x' = Ax + b$\\
 Kritische Punkte: $x' = Ax + b = 0$ Gleichgewicht: $b = -Ax$ oder $x = -A^{-1}*b$\\
+Lösungen bei b=0 (homogenen Gleichung): Für jeden Eigenwert und Eigenvektor eine Lösung: \\
+$x_1(t) = e^{\lambda_1t}v_1,x_2(t) = e^{\lambda_2t}v_2...x_n(t) = e^{\lambda_nt}v_n$\\
 
+\subsection{Variation der Konstanten}
+Gegeben ist ein lineares, inhomogenes System 1. Ordnung: \\
+\begin{equation*}
+\frac{d}{dt}x(t) = Ax(t) + b(t) 
+\end{equation*}
+Als erstes werden die Lösungen der homogenen Gleichung gelöst, wir erhalten für jeden Eigenwert und Eigenvektor eine Lösung: \\
+$x_1(t) = e^{\lambda_1t}v_1,x_2(t) = e^{\lambda_2t}v_2...x_n(t) = e^{\lambda_nt}v_n$\\
+Diese Lösungen ergeben unsere Fundamentalmatrix:\\
+\begin{equation*}
+X(t) = 
+	\begin{vmatrix} 
+	        x_1(t) && x_2(t) && ... && x_n(t)\\    
+	\end{vmatrix}
+\end{equation*}
 
+Mit Hilfe der Fundamentalmatrix können wir nun die partikuläre Lösung des Systems bestimmen:\\
+\begin{equation*}
+y_P(t) = X(t) \int{X(t)^{-1}b(t)dt}
+\end{equation*}
+Die gesamte Lösung ist nun die Summe aus der homogenen sowie der partikulären Lösung.
+
+\newpage
 \subsection{Superpositionsprinzip}
 Gegeben ist folgendes lineares homogenes Gleichungssystem:
 \begin{equation*}
