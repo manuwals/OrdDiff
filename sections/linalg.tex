@@ -1,9 +1,48 @@
 \section{Lineare Algebra / Matrixexponential}
-%TODO by Selina
--Transformationen\\
--Jordan Normalform\\
+\subsection{Eigenwerte / Eigenvektoren}
+Eigenwerte:
+$det(A-\lambda E) = 0$ lösen\\
+$2 \times 2$-Matrix:
+$\det
+ \begin{bmatrix}
+ a_{11} & a_{12} \\
+ a_{21} & a_{22}
+ \end{bmatrix}
+= a_{11} a_{22} - a_{12} a_{21}$
+
+$3 \times 3$-Matrix:
+$\det
+ \begin{bmatrix}
+ a_{11} & a_{12} & a_{13} \\
+ a_{21} & a_{22} & a_{23} \\
+ a_{31} & a_{32} & a_{33}
+ \end{bmatrix} = a_{11} a_{22} a_{33} +a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{13} a_{22} a_{31} - a_{12} a_{21} a_{33} - a_{11} a_{23} a_{32}$
+
+Eigenvektoren: $A-\lambda_i E = 0$ lösen
+
+Inverse 2x2-Matrizen\\
+$A^{-1} = \begin{bmatrix}
+a & b \\ c & d \\
+\end{bmatrix}^{-1} =
+\frac{1}{\det(A)} \begin{bmatrix}
+d & -b \\ -c & a \\
+\end{bmatrix}  =
+\frac{1}{ad-bc} \begin{bmatrix}
+d & -b \\ -c & a \\
+\end{bmatrix}$
+
+Inverse 3x3-Matrizen\\
+$A^{-1} = \begin{bmatrix}
+a & b & c\\ d & e & f \\ g & h & i \\
+\end{bmatrix}^{-1} =
+\frac{1}{\det(A)} \begin{bmatrix}
+ei - fh & ch - bi & bf - ce \\
+fg - di & ai - cg & cd - af \\
+dh - eg & bg - ah & ae - bd
+\end{bmatrix}$
+
 \subsection{Jordan}
-\begin{minipage}[h]{0.65\textwidth}
+\begin{minipage}[h]{0.64\textwidth}
 	\includegraphics[width=1.0\textwidth]{images/Jordan.png}
 \end{minipage}
 \subsection{Berechnung Jordan Normalform mit TI89}
