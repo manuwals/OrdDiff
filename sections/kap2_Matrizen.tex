@@ -14,16 +14,16 @@ $x_1(t) = e^{\lambda_1t}v_1,x_2(t) = e^{\lambda_2t}v_2...x_n(t) = e^{\lambda_nt}
 Diese Lösungen ergeben unsere Fundamentalmatrix:\\
 \begin{equation*}
 X(t) = 
-	\begin{vmatrix} 
+	\begin{bmatrix} 
 	        x_1(t) && x_2(t) && ... && x_n(t)\\    
-	\end{vmatrix}
+	\end{bmatrix}
 \end{equation*}
 
 Mit Hilfe der Fundamentalmatrix können wir nun die partikuläre Lösung des Systems bestimmen:\\
 \begin{equation*}
 y_P(t) = X(t) \int{X(t)^{-1}b(t)dt}
 \end{equation*}
-Die gesamte Lösung ist nun die Summe aus der homogenen sowie der partikulären Lösung.
+Die gesamte Lösung ist nun die Summe der homogenen und der partikulären Lösung.
 
 \newpage
 \subsection{Superpositionsprinzip}
@@ -36,7 +36,9 @@ Das Superpositionsprinzip sagt, dass die Linearkombination der beiden Lösungen 
 	x(t) = c_1 x_1(t) + c_2 x_2(t)
 \end{equation*}
 Wobei $c_1$ und $c_2$ beliebige Skalare sind. 
-Das Prinzip kann auch für Systeme höherer Ordnung verwendet werden. Hier ein \textbf{Beispiel} für eine Differentialgleichung zweiter Ordnung: \\
+Das Prinzip kann auch für Systeme höherer Ordnung verwendet werden. \\
+
+Hier ein \textbf{Beispiel} für eine Differentialgleichung zweiter Ordnung: \\
 Gegeben: $t^2y''(t)-4ty'(t)+6y(t)=0$, $t>0$, $y_1(t)=t^2$\\
 Gesucht: Eine zweite Lösung $y_2(t)$, so dass ${y_1(t),y_2(t)}$ ein Fundamentalsystem ergeben. \\
 Vorgehensweise: \\
@@ -52,6 +54,7 @@ Auf Grund der beiden Lösungen, kann die Fundamentalmatrix $Y(t) =
 	        y_{1}(t) & y_{2}(t)\\ 
 	        y'_{1}(t) & y'_{2}(t)\\   
 \end{vmatrix} $ berechnet werden und mit Hilfe der Wronskideterminante geprüft werden, ob die Lösungen linear unabhängig sind ($det(W) \neq 0$). 
+
 \subsection{Lineare Unabhängigkeit}
 Die lineare Unabhängigkeit der beiden Lösungen $x_1(t)$ und $x_2(t)$ kann mit Hilfe der \textbf{Wronskideterminante} geprüft werden. 
 \begin{equation*}
@@ -66,7 +69,7 @@ Sind $x_1(t)$ und $x_2(t)$ \textbf{linear abhängig}, dann gilt $W(t) = 0$ für 
 Jede Lösung $\Phi(t)$ kann als Linearkombination eines Fundamentalsystems zweier Lösungen $x_1(t)$ und $x_2(t)$ dargestellt werden. Diese Linearkombination wird als die allgemeine Lösung eines linearen homogenen Systems bezeichnet. \\
 \textbf{Theorem von Abel}\\
 \begin{equation*}
-W(t) = c\cdot e^{\int{trace(A(t))dt}}
+W(t) = c\cdot e^{\int{\operatorname{trace}(A(t))dt}}
 \end{equation*}
 Spur einer Matrix = Summe der Hauptdiagonalelemente
 \subsection{Fluss eines Vektorfeldes}
@@ -203,12 +206,12 @@ Gegeben ist die Differentialgleichung:
 \begin{equation*}
 \frac{d}{dt}x(t) = A(t)x(t)
 \end{equation*}
-mit Anfangbedingung $x(0) = x_0$ und der konstanten nxn Matrix A. Mit Hilfe des Flusses $\Phi(t)$ kann die Lösung dieses Problems dargestelltw erden als: 
+mit Anfangsbedingung $x(0) = x_0$ und der konstanten $n \times n$ Matrix A. Mit Hilfe des Flusses $\Phi(t)$ kann die Lösung dieses Problems dargestellt werden als: 
 \begin{equation*}
 x(t) = \Phi(t)x_0
 \end{equation*}
-Bei einer skalaren Differentialgleichung $\frac{d}{dt}x(t) = ax(t)$ ist die Lösung bei gegebener Anfangsbedingung: $x(t) = e^{at}x_0$. Wenn wir diese Lösung nun mit $\Phi(t)$ vergleichen, stellt sich heraus, dass der Fluss eines nxn Systems ebenfalls eine Exponentialdarstellung besitzt. 
-Ist A eine konstante nxn Matrix, dann besittz der Fluss $\Phi(t)$, der vom Vektorfeld erzeugt wird, folgende Darstellung als Matrixexponential: 
+Bei einer skalaren Differentialgleichung $\frac{d}{dt}x(t) = ax(t)$ ist die Lösung bei gegebener Anfangsbedingung: $x(t) = e^{at}x_0$. Wenn wir diese Lösung nun mit $\Phi(t)$ vergleichen, stellt sich heraus, dass der Fluss eines $n \times n$ Systems ebenfalls eine Exponentialdarstellung besitzt. 
+Ist $A$ eine konstante $n \times n$ Matrix, dann besittz der Fluss $\Phi(t)$, der vom Vektorfeld erzeugt wird, folgende Darstellung als Matrixexponential: 
 \begin{equation*}
 \Phi(t) = e^{At} = X(t)X(0)^{-1}
 \end{equation*}
@@ -220,13 +223,13 @@ x(t) = e^{At}x_0
 
 
 \subsection{Degenerierte Matrizen}
-Ist A degeneriert, bedeutet dies, dass sie mindestens einen Eigenwert $\lambda$ mit einer geometrischen Vielfachheit (Anzahl Eigenvektoren) besitzt, die kleiner als seine algebraische Vielfachheit (Anzahl gleiche Eigenwerte $m$) ist. 
-Das bedeutet, dass die linear unabhängigen Eigenvektoren der Matrix A den Raum $R^n$ nicht ausschöpft.\\
-Ist $\lambda$ ein Eigenwert von A mit der algebraischen Vielfachheit m, dann besitzt die Gleichung: 
+Ist $A$ degeneriert, bedeutet dies, dass sie mindestens einen Eigenwert $\lambda$ mit einer geometrischen Vielfachheit (Anzahl Eigenvektoren) besitzt, die kleiner als seine algebraische Vielfachheit (Anzahl gleiche Eigenwerte $m$) ist. 
+Das bedeutet, dass die linear unabhängigen Eigenvektoren der Matrix $A$ den Raum $\mathbb{R}^n$ nicht ausschöpft.\\
+Ist $\lambda$ ein Eigenwert von $A$ mit der algebraischen Vielfachheit $m$, dann besitzt die Gleichung: 
 \begin{equation*}
 (A-\lambda E)^m b_k = 0
 \end{equation*}
-eine Anzahl m linear unabhängige Lösungen $b_1$ bis $b_m$ und für k = 1...m sind die vektorwertigen Funktionen
+eine Anzahl $m$ linear unabhängige Lösungen $b_1$ bis $b_m$ und für $k = 1,\ldots,m$ sind die vektorwertigen Funktionen
 \begin{equation*}
 x_k(t) = e^{\lambda t}\left[{b_k + \frac{t}{1!}(A-\lambda E)b_k + ... + \frac{t^{m-1}}{(m-1)!}(A-\lambda E)^{m-1}b_k}\right]
 \end{equation*}
@@ -245,10 +248,10 @@ Folgende Matrix A ist gegeben:
 \end{bmatrix}
 \end{equation*}
 \begin{equation*}
-det(A-\lambda E) = 0 \qquad \Longrightarrow \lambda_1 = 2 \text{(Doppelt)} \quad \lambda_2 = -1
+\det(A-\lambda E) = 0 \qquad \Longrightarrow \lambda_1 = 2 \text{(Doppelt)} \quad \lambda_2 = -1
 \end{equation*}
 
-\textbf{Schritt 1:} Eigenvektoren Berechenen (Hier im Beispiel nur für $\lambda_1$)\\
+\textbf{Schritt 1:} Eigenvektoren berechenen (Hier im Beispiel nur für $\lambda_1$)\\
 \begin{equation*}
 (A - \lambda_1 E)\nu = 0 \qquad \Longrightarrow \nu = 
 \begin{bmatrix} %phantom is for spacing

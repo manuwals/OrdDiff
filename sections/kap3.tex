@@ -1,24 +1,24 @@
 \section{Kapitel 3}
 \subsection{Lineare homogene Differentialgleichung 2. Ordnung}
-DGL: $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
-Ansatz: $y(t) = e^{\lambda t}$\\
-Einsetzen in DGL $\rightarrow$ Charakteristisches Polynom: $a\lambda^2 + b\lambda +c =0$\\
-Nullstellen der Gleichung bestimmen: $\lambda_1,\lambda_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$\\
-Fall 1:\\ 
-$\lambda_1,\lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda_1 t}, y_2(t) = e^{\lambda_2 t}$\\
-Falls 2:\\ 
-$\lambda = \lambda_1 = \lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda t}, y_2(t) = te^{\lambda t}$\\
-Fall 3:\\ 
-$\lambda_1,\lambda_2* =$ komplex $\rightarrow z_1(t) = e^{\lambda_1 t}, z_2(t) = e^{\lambda_2 t}$\\
-$y_1(t) = Real(z_1)$ und $y_2(t) = Imag(z_1)$\\
-Allgemeine Lösung: $y(t) = c_1y_1(t) + c_2y_2(t)$\\
-Freiheitsgrade $c_1,c_2$ mit Hilfe der gegebenen Anfangsbedinungen bestimmen. 
+\begin{tabular}{ll}
+	DGL:                       & $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$                                                     \\
+	Ansatz:                    & $y(t) = e^{\lambda t}$                                                                                  \\
+	Einsetzen in DGL           & $\rightarrow$ Charakteristisches Polynom: $a\lambda^2 + b\lambda +c =0$                                 \\
+	Nullstellen der Gleichung: & $\lambda_1,\lambda_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$                                              \\
+	Fall 1:                    & $\lambda_1,\lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda_1 t}, y_2(t) = e^{\lambda_2 t}$          \\
+	Fall 2:                    & $\lambda = \lambda_1 = \lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda t}, y_2(t) = te^{\lambda t}$ \\
+	Fall 3:                    & $\lambda_1,\lambda_2* =$ komplex $\rightarrow z_1(t) = e^{\lambda_1 t}, z_2(t) = e^{\lambda_2 t}$       \\
+	                           & $y_1(t) = Real(z_1)$ und $y_2(t) = Imag(z_1)$                                                           \\
+	Allgemeine Lösung:         & $y(t) = c_1y_1(t) + c_2y_2(t)$                                                                          \\
+	Freiheitsgrade:            & $c_1,c_2$ mit Hilfe der gegebenen Anfangsbedingungen bestimmen
+\end{tabular} \\
+
+
 \subsection{Umwandlung in ein System 1. Ordnung}
-$a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
-Substitution:\\
-$x_1(t) = y(t)$\\
-$x_2(t) = y'(t)$\\
-$
+Skalare, lineare, homogene DGL 2. Ordnung mit konstanten Koeffizienten:
+\[a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0 \]
+Substitution: \qquad $x_1(t) = y(t) \qquad \text{und} \qquad x_2(t) = y'(t)$\\
+\[
 	\begin{vmatrix} 
 	        y'(t)\\ 
 	        y''(t)\\   
@@ -33,8 +33,8 @@ $
 	        x_2(t)\\ 
 	        -\frac{b}{a} - \frac{c}{a}x_1(t)\\   
 	\end{vmatrix}
-$\\
-DGL System:\\
+\]
+ergibt das DGL System:\\
 \begin{equation*}
 x'(t) = Ax(t)
 \end{equation*}
@@ -79,7 +79,8 @@ x'(t) = Ax(t) + g(t)
 	        g(t)\\   
 	\end{vmatrix}
 \end{equation*}
-Transformation 3.Ordnung $y'''(t) + p(t)y''(t)+q(t)'(t)+r(t)y(t)=g(t)$:\\
+
+\paragraph{Transformation 3.Ordnung} $y'''(t) + p(t)y''(t)+q(t)'(t)+r(t)y(t)=g(t)$:\\
 \begin{equation*}
 	\begin{vmatrix} 
 	        x_1(t)\\ 
@@ -117,6 +118,7 @@ Transformation 3.Ordnung $y'''(t) + p(t)y''(t)+q(t)'(t)+r(t)y(t)=g(t)$:\\
 			        g(t)   
 			\end{vmatrix}
 \end{equation*}
+
 \subsection{Inhomogen 2. Ordnung}
 \begin{tabbing}
 1. Homogenes System lösen \= $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
@@ -221,15 +223,15 @@ b(t)=\begin{bmatrix}
 \subsubsection{Freie Schwingung}
 $m \cdot y''(t) + \gamma\cdot y'(t) + k \cdot y(t) = 0$\\
 \begin{tabbing}
-ohne Dämpfung ($\gamma = 0$): \= $y(t) = A \cdot cos(w_0 \cdot t) + b\cdot sin(w_0 \cdot t) \quad w_0=\sqrt{\dfrac{k}{m}} \quad  A=y_0 \quad B=\dfrac{y_0'}{w_0}$\\
-\>$y(t) =R\cdot cos(w_0 \cdot t - \varphi) \quad R=\sqrt{A^2+B^2} \quad \varphi=atan2(B,A)$\\
+ohne Dämpfung ($\gamma = 0$): \= $y(t) = A \cdot \cos(w_0 \cdot t) + b\cdot \sin(w_0 \cdot t) \qquad w_0=\sqrt{\dfrac{k}{m}} \qquad  A=y_0 \qquad B=\dfrac{y_0'}{w_0}$\\
+\>$y(t) =R\cdot \cos(w_0 \cdot t - \varphi) \quad R=\sqrt{A^2+B^2} \quad \varphi=\operatorname{atan2}(B,A)$\\
 \end{tabbing}
 
 \begin{tabbing}
 mit Dämpfung ($\gamma \neq 0$): \= $Z(\lambda)=m\lambda^2 + \gamma \lambda + k \rightarrow \lambda_{1,2}=\dfrac{-\gamma \pm \sqrt{\gamma^2 - 4 \, m \, k}}{2 \, m} \rightarrow D=\gamma^2 - 4 \, m \, k$\\
 \> Fall 1: $D>0 \quad y(t)=Ae^{\lambda_1 \, t} + Be^{\lambda_2 \, t}$\\
 \> Fall 2: $D=0 \quad y(t)=(A + B \,t)e^{\lambda \, t}$\\
-\> Fall 3: $D<0 \quad y(t)=Ae^{\mu \, t}cos(\nu \, t) + Be^{\mu \, t}sin(\nu \, t) \quad \mu=-\dfrac{\gamma}{2\,m} \quad \nu = \sqrt{\dfrac{k}{m}-\dfrac{\gamma^2}{4 \, m^2}}$
+\> Fall 3: $D<0 \quad y(t)=Ae^{\mu \, t}\cos(\nu \, t) + Be^{\mu \, t}\sin(\nu \, t) \quad \mu=-\dfrac{\gamma}{2\,m} \quad \nu = \sqrt{\dfrac{k}{m}-\dfrac{\gamma^2}{4 \, m^2}}$
 \end{tabbing}
 
 $\operatorname{atan2}(B, A) = \begin{cases}
@@ -243,19 +245,19 @@ $\operatorname{atan2}(B, A) = \begin{cases}
 
 \subsubsection{Erzwungene Schwingung}
 $m \cdot y''(t) + \gamma\cdot y'(t) + k \cdot y(t) = f(t)=Ae^{i\,w\,t} \rightarrow$\\
-$ y''(t) + 2 \, \delta y'(t) + w_0^2 \, y(t) = F(t)$ mit $w_0=\sqrt{\dfrac{k}{m}} \quad \delta=\dfrac{\gamma}{2\,m} \quad F(t)=\dfrac{f(t)}{m}$\\
+$ y''(t) + 2 \, \delta y'(t) + w_0^2 \, y(t) = F(t)$ \qquad mit \quad $w_0=\sqrt{\dfrac{k}{m}} \qquad \delta=\dfrac{\gamma}{2\,m} \qquad F(t)=\dfrac{f(t)}{m}$\\
 $\rightarrow y(t)=y_h(t)+y_p(t)$
 
 \begin{tabbing}
-ohne Dämpfung ($\delta = 0$): \= $y(t) = \dfrac{A}{w_0^2-w^2}(cos(w_0\,t)-cos(w\,t))$\\
-\> $y(t) = \dfrac{A}{w_0^2-w^2}sin(\dfrac{w_0-w}{2} \cdot t)sin(\dfrac{w_0+w}{2} \cdot t)$\\
+ohne Dämpfung ($\delta = 0$): \= $y(t) = \dfrac{A}{w_0^2-w^2}(\cos(w_0\,t)-\cos(w\,t))$\\
+\> $y(t) = \dfrac{A}{w_0^2-w^2}\sin(\dfrac{w_0-w}{2} \cdot t)\sin(\dfrac{w_0+w}{2} \cdot t)$\\
 \end{tabbing}
 
 \begin{tabbing}
 mit Dämpfung ($\delta \neq 0$): \= $y_h(t \rightarrow \infty) = 0$\\
-\> $y_p(t)= Real\left(\dfrac{1}{w_0^2-w^2 + 2\,i\,\delta\,w}Ae^{i\,w\,t}\right)$\\
-\> $y_p(t)= g(w)\,A\,cos(wt-\varphi(w))$\\
-\> $g(w)=\dfrac{1}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}} \quad \varphi(w)=arccos(\dfrac{w_0^2-w^2}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}})$\\
+\> $y_p(t)= \operatorname{Real}\left(\dfrac{1}{w_0^2-w^2 + 2\,i\,\delta\,w}Ae^{i\,w\,t}\right)$\\
+\> $y_p(t)= g(w)\,A\,\cos(wt-\varphi(w))$\\
+\> $g(w)=\dfrac{1}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}} \quad \varphi(w)=\arccos(\dfrac{w_0^2-w^2}{\sqrt{(w_0^2-w^2)^2+4\delta^2w^2}})$\\
 \> $g_{max}=\dfrac{1}{2\delta} \dfrac{1}{\sqrt{w_0^2-\delta^2}}$ bei $w_{max}=\sqrt{w_0^2-2\,\delta^2}$
 \end{tabbing}
 \begin{minipage}[h]{0.5\textwidth} 

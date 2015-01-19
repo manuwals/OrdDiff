@@ -9,6 +9,8 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{matrix}
 \usetikzlibrary{intersections}
+\usetikzlibrary{patterns}
+\usepackage{pgfplots}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
@@ -26,7 +28,7 @@
 \setlength{\columnsep}{1.5em}
 
 \title{OrdDiff Zusammenfassung}
-\subtitle{Dozent: Ch. Zaugg, Ordinary Differential Equation}
+\subtitle{Dozent: Ch.~Zaugg, T.~Borer - Ordinary Differential Equation}
 \author{Ch. Winterhalter, S. Malacarne, H. Diethelm}
 
 \begin{document}
@@ -37,18 +39,9 @@
 \maketitle
 \newpage
 
+\setcounter{tocdepth}{2}
 \tableofcontents
 \newpage
-
-
-\setcounter{section}{0}
-
-%TODO: \\
-%Jacobi Matrix: Done\\
-%Jordan Normalform: Done\\
-%Laplace Entwicklungssatz (determinante bestimmen): Done\\
-%Inverse bestimmen: Done \\
-%Transformationsmatrix: Done
 
 \input{sections/kap1}
 \input{sections/kap2}
