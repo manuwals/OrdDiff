@@ -11,6 +11,7 @@
 \usetikzlibrary{intersections}
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
+\usepackage{enumitem}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
@@ -28,8 +29,8 @@
 \setlength{\columnsep}{1.5em}
 
 \title{OrdDiff Zusammenfassung}
-\subtitle{Dozent: Ch.~Zaugg, T.~Borer - Ordinary Differential Equation}
-\author{Ch. Winterhalter, S. Malacarne, H. Diethelm}
+\subtitle{Dozent: A. Henrici - Ordinary Differential Equation}
+\author{Ch. Winterhalter, S. Malacarne, H. Diethelm, R. Christen}
 
 \begin{document}
 \selectlanguage{ngerman}
@@ -43,10 +44,16 @@
 \tableofcontents
 \newpage
 
-\input{sections/kap1}
-\input{sections/kap2}
-\input{sections/kap3}
-\input{sections/kap4}
+\input{sections/DGL}
+\newpage
+\input{sections/DGLSys}
+\newpage
+\input{sections/num}
+\input{sections/dynSys}
+\newpage
 \input{sections/linalg}
+
+\section{Idiotenseite}
+\input{idiotenseite/trigo/trigoInclude}
 
 \end{document}
