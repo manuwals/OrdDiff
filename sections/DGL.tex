@@ -146,10 +146,24 @@ Die gesamte Lösung ergibt sich dann wieder aus der Summe der homogenen sowie de
 
 \subsubsection{Richtungsfeld und Lösung - Begriff der Lösung}
 Die Lösung der Differentialgleichung $\frac{d}{dt}x(t) = f(t,x(t))$ ist eine parametrisierte Kurve x(t). Die Ableitung nach t ist demnach der Tangentenvektor an diese Kurve. Die Diffgleichung enthält demnach die Information über die Tangentenvektoren an ihre Lösungskurven. 
-Das bedeutet, auch ohne die Lösung können wir die rechte Seite der Gleichung - d.h. die Tangentenvektoren - zeichnen. Das Lösen der Gleichung ist schlussendlich nur das Einpassen von Kurven in dieses Vektorfeld. Solche Kurven sind die Trajektorien der Gleichung. Die Trajektorie ist jedoch \textbf{nicht} die Lösung, da als Beispiel die Zeitkomponente fehlt. Hätte man (t,x(t)), hätte man die gesamte Lösung. 
-\begin{minipage}[h]{0.35\textwidth} 
-	\includegraphics[width=0.9\textwidth]{images/Vektorfeld.png}
-\end{minipage}
-\begin{minipage}[h]{0.35\textwidth}
-	\includegraphics[width=1.0\textwidth]{images/Phasenportrait.png}
-\end{minipage}
+Das bedeutet, auch ohne die Lösung können wir die rechte Seite der Gleichung - d.h. die Tangentenvektoren - zeichnen. Das Lösen der Gleichung ist schlussendlich nur das Einpassen von Kurven in dieses Vektorfeld. Solche Kurven sind die Trajektorien der Gleichung. Die Trajektorie ist jedoch \textbf{nicht} die Lösung, da als Beispiel die Zeitkomponente fehlt. Hätte man (t,x(t)), hätte man die gesamte Lösung.
+ 
+ \vspace{0.5cm}
+ 
+ In \ref{fig:xPrime_x} erkennt man das Verhalten von $\dot{x}$ abhängig von $x$. Diese Erkenntnisse können verwendet werden, um das Richtungsfeld in Abbildung \ref{fig:x_t_quiver} zu zeichnen. Der Wert der Kurve $\dot{x}$ entspricht der Steigung der Pfeile in Abbildung \ref{fig:x_t_quiver}.
+ 
+ \begin{figure}
+	\centering
+	\begin{subfigure}[h]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{images/xPrime_x.png}
+		\caption{Example plot of $\dot{x} = f(x)$}
+		\label{fig:xPrime_x}
+	\end{subfigure}
+	\begin{subfigure}[h]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{images/x_t_quiver.png}
+		\caption{Corresponding direction field $x(t)$}
+		\label{fig:x_t_quiver}
+	\end{subfigure}
+	\caption{Relationship between the plot of the differential equation and the direction field.}
+\end{figure}
+
