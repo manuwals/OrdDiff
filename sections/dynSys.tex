@@ -14,6 +14,7 @@ Bei der Phasengerade werden die Gleichgewichtslösungen in Funktion der Ableitun
 Falls $x^*$ ein \textbf{Fixpunkt} von $\dot{x} = f(x)$ ist, ist $x(t) = x^*$ eine konstante Lösung des Systems $\dot{x} = f(x)$. Der \textbf{Phasenraum} eines eindimensionalen Systems vom Typ $\dot{x} = f(x)$ is $\mathbb{R}$. Wegen des \textbf{Eindeutigkeitssatzes} hat $\dot{x} = f(x)$ für alle $0 \leq t$ das selbe Vorzeichen. Die Lösung ist daher monoton steigend, monoton fallend oder ist ein Fixpunkt. Nur für \textbf{autonome} DLG 1. Ordnung sind keine periodische Lösungen möglich.
 
 \subsection{Lineare Stabilitätsanalyse}
+\label{sec:linStab}
 $\eta (t) = x(t) - x^*$ \hspace{1cm} falls $x^* \neq 0 \Rightarrow$ Taylor:\newline
 $\dot{\eta} = \dot{x} = f(x) \approx f(x^*) + f'(x^*) \cdot \underbrace{(x - x^*)}_{\eta (t)}(x - x^*) = f'(x^*) \cdot \eta$ \\
 $\Rightarrow \mathrm{DGL}: \dot{\eta} = \eta \cdot f'(x^*),$ \hspace{1cm} $\eta(t) = \eta(0) \cdot e^{f'(x^*)t}$ \\ \\
@@ -55,18 +56,29 @@ $\Rightarrow \mathrm{DGL}: \dot{\eta} = \eta \cdot f'(x^*),$ \hspace{1cm} $\eta(
 \end{multicols}
 
 \subsection{Bifurkationsdiagramm}
-\begin{minipage}[h]{0.35\textwidth}
-\[y'=y(a-y)\]
-Kritische Punkte in Abhängikeit von $a$\\
-\begin{tabbing}
-Ausgezogen: \= Asymptotisch Stabil\\
-Gestrichelt: \> Instabil\\
-Zentrum: \> Semistabil\\
-\end{tabbing}
-\end{minipage}
-\begin{minipage}[h]{0.35\textwidth}
-	\includegraphics[width=1.0\textwidth]{images/Bifurkationsdiagramm.png}
-\end{minipage}
+	Diagramm der kritischen Punkte in Abhängigkeit eines Parameters (e.g. $a$).
+	
+	Beispiel:
+	
+	\[y'=y(a-y)\]
+	
+\begin{tabular}{p{0.3\textwidth}p{0.3\textwidth}p{0.3\textwidth}}
+	\vspace{0pt}	
+	\begin{tabular}[h]{p{0.1\textwidth}p{0.2\textwidth}}
+	Ausgezogen:		& Asymptotisch Stabil\\
+	Gestrichelt:	& Instabil\\
+	Zentrum:		& Semistabil\\
+	\end{tabular}
+	& 	\vspace{0pt}
+		\includegraphics[width=0.3\textwidth]{images/Bifurkationsdiagramm.png}
+	& 	\vspace{0pt}
+		\textbf{Vorgehen:}
+		\begin{tabular}[h]{p{0.02\textwidth}p{0.28\textwidth}}
+		1:	& Kritische Punkte berechnen ($\dot{x} = 0$). Ergibt $x^*_k(a)$.\\
+		2:	& Stabilität der Punkte berechnen (gemäss Section \ref{sec:linStab}).\\
+		3:	& Kurven in Diagramm ($x^*(a)$ aufzeichnen).\\
+		\end{tabular}\\
+\end{tabular}
 
 \subsubsection{Allgemein 1. Ordnung}
 \[ \dfrac{d}{dt}y(t)=f(t,y(t)) \qquad y(t_0)=y_0 \]
