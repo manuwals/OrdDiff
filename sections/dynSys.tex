@@ -100,8 +100,9 @@ $\Rightarrow \mathrm{DGL}: \dot{\eta} = \eta \cdot f'(x^*),$ \hspace{1cm} $\eta(
 
 \begin{longtable}{|p{0.25\textwidth}|p{0.7\textwidth}|}
 	\hline 
-	\textbf{Eigenwerte} & \textbf{Stabilität} \endhead
+	\textbf{Eigenwerte} & \textbf{Stabilität}\\
 	\hline
+	\endhead
 	
 	\multicolumn{2}{l}{Für $\Delta > 0$ und $\tau < 0$ gilt:} \\
 	
@@ -137,6 +138,40 @@ $\Rightarrow \mathrm{DGL}: \dot{\eta} = \eta \cdot f'(x^*),$ \hspace{1cm} $\eta(
 	\textbf{grenzstabil:} & $\operatorname{Re}(\lambda_i) \leq 0$ für alle $\lambda_i$ \\
 	\textbf{instabil:} & $\operatorname{Re}(\lambda_i) > 0$ für mind. einen Wert \\
 	\textbf{asymptotisch stabil:} &$\operatorname{Re} < 0$ für alle $\lambda_i$ \\
+	\hline
+\end{longtable}
+
+\subsubsection{Phasenportraits Zeichnen}
+
+\begin{longtable}{|p{0.47\textwidth}|p{0.47\textwidth}|}
+	\hline
+	\textbf{Reelle Eigenwerte (Saddle, Node)} & \textbf{Komplexe Eigenwerte (Centre, Focus)}\\
+	\hline
+	\endhead
+	\multicolumn{2}{l}{\textbf{Eigenvektoren}}\\
+	\hline
+	Eigenvektoren sind ein Anhaltspunkt dafür, wie sich ein System mit der Zeit entwickelt. Sie sind immer durch den Fixpunkt zu zeichnen (Verlauf anhand $x$ und $y$-Koordinate des Vektors). Wenn der Eigenwert $> 0$ ist, ist die Richtung weg vom Fixpunkt einzuzeichnen, sonst zum Fixpunkt hin.
+		& Die Eigenvektoren sind hier nicht einzuzeichnen. Sie sind komplex, die Lösung schwingt deshalb.\\
+	\hline
+	\multicolumn{2}{l}{\textbf{Richtung und Verlauf der Lösungstrajektorien}}\\
+	\hline
+	\multicolumn{2}{|l|}{Generell:}\\
+	\hline
+	Lösungen, welche beim Eigenvektor mit niedrigerem Eigenwert beginnen, konvergieren zum nächsten Eigenvektor mit höherem Eigenwert.
+		& Um die Richtung der Spirale oder des Kreises zu erkennen, wählt man einen einfachen Punkt im Koordinatensystem (e.g. $\begin{bmatrix}1 & 0\end{bmatrix}$) und multipliziert diesen mit der Systemmatrix $A$. Das Resultat ist ein zweiter Punkt im Koordinatensystem. Das System bewegt sich also vom ersten in Richtung des zweiten Punktes.\\
+	\hline
+	\textbf{Unstable Node:}\newline
+	Linien beginnen beim Fixpunkt und gehen nach aussen. Sie schmiegen sich am Anfang eher dem Eigenvektor mit dem niedrigeren Eigenwert an, und nähern sich dann dem Eigenvektor mit dem höheren Eigenwert. Am Ende verlaufen sie parallel zu diesem Eigenvektor.
+		& \textbf{Unstable Focus:}\newline
+			Linien beginnen beim Fixpunkt, drehen sich um den Fixpunkt mit der oben genannten Richtung und gehen nach aussen (Spirale).\\
+	\textbf{Stable Node:}\newline
+	Linien Beginnen aussen und konvergieren zum Fixpunkt. Sie verlaufen am Anfang eher parallel zum Eigenvektor mit dem niedrigeren Eigenwert, und nähern sich dann dem Eigenvektor mit dem höheren Eigenwert.
+		& \textbf{Stable Focus:}\newline			
+			Linien beginnen aussen, drehen sich um den Fixpunkt mit der oben genannten Richtung und konvergieren zum Fixpunkt (Spirale).\\
+	\textbf{Saddle:}\newline
+	Linien Beginnen aussen parallel zum Eigenvektor mit dem negativen Eigenwert und gehen in Richtung des Fixpunktes. In der Nähe des Fixpunktes ändern sie die Richtung und gehen wieder nach aussen und werden parallel zum Eigenvektor mit dem positiven Eigenwert.
+		& \textbf{Centre:}\newline
+			Die Linien Drehen sich um den Fixpunkt, konvergieren aber weder zu ihm hin, noch divergieren sie.\\
 	\hline
 \end{longtable}
 
