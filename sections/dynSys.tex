@@ -80,70 +80,65 @@ $\Rightarrow \mathrm{DGL}: \dot{\eta} = \eta \cdot f'(x^*),$ \hspace{1cm} $\eta(
 		\end{tabular}\\
 \end{tabular}
 
-\subsubsection{Allgemein 1. Ordnung}
-\[ \dfrac{d}{dt}y(t)=f(t,y(t)) \qquad y(t_0)=y_0 \]
-Eindeutige Lösung $\varphi(t)$ im Intervall falls $f(t,y(t))$ und $\dfrac{d \; f(t,y(t))}{dt}$ stetig im Intervall.
-
 \subsection{Zweidimensionale Systeme}
 
 \begin{tabular}{ll}
-	\textbf{stabil:} \qquad & $\lvert x(t) - x^*\rvert < \epsilon \quad 0 < t < \infty$ \\
+	\textbf{stabil:} & $\lvert x(t) - x^*\rvert < \epsilon \quad 0 < t < \infty$ \\
 	\textbf{instabil:} & $\lvert x(t) - x^*\rvert \nless \epsilon \quad 0 < t < \infty$ \\
 	\textbf{asymptotisch stabil:} & $\lim\limits_{t \to \infty} \lvert x(t) - x^*\rvert = 0$ \\
 \end{tabular}\\ \\
 
 \subsubsection{Typen von Fixpunkten}
 
-\begin{tabular}{ll}
-	\textbf{Spur:} \qquad & $\tau = \mathrm{tr}(A) = a_{11} + a_{22} = \lambda_1 + \lambda_2$ \\
+\begin{tabular}{|p{0.25\textwidth}|p{0.7\textwidth}|}
+	\hline
+	\textbf{Spur:} & $\tau = \mathrm{tr}(A) = a_{11} + a_{22} = \lambda_1 + \lambda_2$ \\
 	\textbf{Determinante:} & $\Delta = \det(A) = a_{11}a_{22}  - a_{12}a_{21} = \lambda_1 \lambda_2$\\
 	\textbf{Eigenwerte:} & $\lambda_{1,2} = \frac{1}{2} \left(\tau \pm \sqrt{\tau^2 - 4\Delta}\right)$ \\
-\end{tabular}\\ \\
+	\hline
+\end{tabular}
 
-Für $\Delta > 0$ und $\tau < 0$ gilt: \\
-\begin{tabular}{|p{5cm}|p{13cm}|}
-\hline \textbf{Eigenwerte} & \textbf{Stabilität} \\ 
-\hline $\operatorname{Re}(\lambda_1) < 0$ und $\operatorname{Re}(\lambda_2) < 0$ & stabiler Knotenpunkt ($\tau^2 - 4 \Delta > 0$ bzw. $ \lambda_1, \lambda_2 \in \mathbb{R}$) \\ 
- & stabiler Strudelpunkt ($\tau^2 - 4 \Delta < 0$ bzw. $ \lambda_1, \lambda_2 \notin \mathbb{R}$) \\
-\hline 
-\end{tabular} \\
-
-Für $\Delta > 0$ und $\tau > 0$ gilt: \\
-\begin{tabular}{|p{5cm}|p{13cm}|}
-\hline \textbf{Eigenwerte} & \textbf{Stabilität} \\ 
-\hline $\operatorname{Re}(\lambda_1) > 0$ und $\operatorname{Re}(\lambda_2) > 0$ & instabiler Knotenpunkt ($\tau^2 - 4 \Delta > 0$ bzw. $ \lambda_1, \lambda_2 \in \mathbb{R}$) \\ 
- & instabiler Strudelpunkt ($\tau^2 - 4 \Delta < 0$ bzw. $ \lambda_1, \lambda_2 \notin \mathbb{R}$) \\
-\hline 
-\end{tabular} \\
-
-Für $\Delta > 0$ und $\tau = 0$ gilt: \\
-\begin{tabular}{|p{5cm}|p{13cm}|}
-\hline \textbf{Eigenwerte} & \textbf{Stabilität} \\ 
-\hline $\operatorname{Re}(\lambda_1) = \operatorname{Re}(\lambda_2) = 0$ & Zentrum bzw. einen elliptischen Fixpunkt\\
-\hline 
-\end{tabular} \\
-
-Für $\Delta = 0$ gilt: \\
-\begin{tabular}{|p{5cm}|p{13cm}|}
-\hline \textbf{Eigenwerte} & \textbf{Stabilität} \\ 
-\hline $\lambda_1 = 0$ oder $\lambda_2 = 0$ & degeneriertes System; Fixpunkte sind nicht isoliert(bspw. ganze Gerade als Fixpunkte) \\ 
-\hline 
-\end{tabular} \\
-
-Für $\Delta < 0$ gilt: \\
-\begin{tabular}{|p{5cm}|p{13cm}|}
-\hline \textbf{Eigenwerte} & \textbf{Stabilität} \\ 
-\hline $\lambda_1 < 0 < \lambda_2$ & Sattelpunkt (saddle point) \\
-\hline $\lambda_2 < 0 < \lambda_1$ & Sattelpunkt (saddle point) \\ 
-\hline 
-\end{tabular} \\
-
-\textbf{Allgemein:}\\
-\begin{tabular}{ll}
-	\textbf{grenzstabil:} \qquad & $\operatorname{Re}(\lambda_i) \leq 0$ für alle $\lambda_i$ \\
+\begin{longtable}{|p{0.25\textwidth}|p{0.7\textwidth}|}
+	\hline 
+	\textbf{Eigenwerte} & \textbf{Stabilität} \endhead
+	\hline
+	
+	\multicolumn{2}{l}{Für $\Delta > 0$ und $\tau < 0$ gilt:} \\
+	
+	\hline $\operatorname{Re}(\lambda_1) < 0$ und $\operatorname{Re}(\lambda_2) < 0$ & stabiler Knotenpunkt ($\tau^2 - 4 \Delta > 0$ bzw. $ \lambda_1, \lambda_2 \in \mathbb{R}$) \\
+	 & stabiler Strudelpunkt ($\tau^2 - 4 \Delta < 0$ bzw. $ \lambda_1, \lambda_2 \notin \mathbb{R}$) \\
+	\hline
+	
+	\multicolumn{2}{l}{Für $\Delta > 0$ und $\tau > 0$ gilt:}\\
+	
+	\hline $\operatorname{Re}(\lambda_1) > 0$ und $\operatorname{Re}(\lambda_2) > 0$ & instabiler Knotenpunkt ($\tau^2 - 4 \Delta > 0$ bzw. $ \lambda_1, \lambda_2 \in \mathbb{R}$) \\
+	 & instabiler Strudelpunkt ($\tau^2 - 4 \Delta < 0$ bzw. $ \lambda_1, \lambda_2 \notin \mathbb{R}$) \\
+	\hline
+	
+	\multicolumn{2}{l}{Für $\Delta > 0$ und $\tau = 0$ gilt:} \\
+	
+	\hline $\operatorname{Re}(\lambda_1) = \operatorname{Re}(\lambda_2) = 0$ & Zentrum bzw. einen elliptischen Fixpunkt\\
+	\hline
+	
+	\multicolumn{2}{l}{Für $\Delta = 0$ gilt:} \\
+	
+	\hline $\lambda_1 = 0$ oder $\lambda_2 = 0$ & degeneriertes System; Fixpunkte sind nicht isoliert(bspw. ganze Gerade als Fixpunkte) \\
+	\hline
+	
+	\multicolumn{2}{l}{Für $\Delta < 0$ gilt:} \\
+	
+	\hline $\lambda_1 < 0 < \lambda_2$ & Sattelpunkt (saddle point) \\
+	\hline $\lambda_2 < 0 < \lambda_1$ & Sattelpunkt (saddle point) \\
+	\hline
+	
+	\multicolumn{2}{l}{\textbf{Allgemein:}}\\
+	
+	\hline
+	\textbf{grenzstabil:} & $\operatorname{Re}(\lambda_i) \leq 0$ für alle $\lambda_i$ \\
 	\textbf{instabil:} & $\operatorname{Re}(\lambda_i) > 0$ für mind. einen Wert \\
 	\textbf{asymptotisch stabil:} &$\operatorname{Re} < 0$ für alle $\lambda_i$ \\
-\end{tabular}\\ \\
+	\hline
+\end{longtable}\\ \\
 
 \subsection{Atraktorbereich und Separatrizen}
 Haben wir ein autonomes System mit Anfangswertproblem. Die Gesamtheit aller Punkte des Phasenraums - die als Anfangsbedingung gewählt - zu einer Trajektorie führen, welche dann gegen einen speziellen Punkt konvergiert, heisst Atraktorbereich des Punktes. 

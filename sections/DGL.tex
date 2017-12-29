@@ -63,38 +63,94 @@ Eine DGL ist dann lösbar, wenn
 \end{tabular}
 
 \subsection{Lineare homogene Differentialgleichung 2. Ordnung}
-\begin{tabular}{ll}
-	DGL:                       & $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$                                                     \\
-	Ansatz:                    & $y(t) = e^{\lambda t}$                                                                                  \\
-	Einsetzen in DGL           & $\rightarrow$ Charakteristisches Polynom: $a\lambda^2 + b\lambda +c =0$                                 \\
-	Nullstellen der Gleichung: & $\lambda_1,\lambda_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$                                              \\
-	Fall 1:                    & $\lambda_1,\lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda_1 t}, y_2(t) = e^{\lambda_2 t}$          \\
-	Fall 2:                    & $\lambda = \lambda_1 = \lambda_2 =$ reell $\rightarrow y_1(t) = e^{\lambda t}, y_2(t) = te^{\lambda t}$ \\
-	Fall 3:                    & $\lambda_1,\lambda_2* =$ komplex $\rightarrow z_1(t) = e^{\lambda_1 t}, z_2(t) = e^{\lambda_2 t} $       \\
-	                           & $y_1(t) = Real(z_1)$ und $y_2(t) = Imag(z_1)$                                                           \\
-	                           & oder: $a \pm j\beta: e^{ax}\cos(\beta x), e^{ax} \sin(\beta x)$\\
-	Allgemeine Lösung:         & $y(t) = C_1y_1(t) + C_2y_2(t)$                                                                          \\
-	Freiheitsgrade:            & $C_1,C_2$ mit Hilfe der gegebenen Anfangsbedingungen bestimmen.
+\begin{tabular}{p{0.25\textwidth}p{0.35\textwidth}p{0.35\textwidth}}
+	\multicolumn{3}{l}{\textbf{Lösungsvorgehen:}}\\
+	\hline
+	DGL:                       		
+		& $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$
+		&\\
+	Allgemeine Lösung:
+		& $y(t) = C_1y_1(t) + C_2y_2(t)$
+		&\\
+	Ansatz:                    		
+		& $y_i(t) = e^{\lambda t}$
+		&\\
+	Charakteristisches Polynom:    	
+		& $a\lambda^2 + b\lambda +c =0$
+		&\\
+	Eigenwerte Berechnen:	 		
+		& $\lambda_1,\lambda_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+		&\\
+	\multicolumn{3}{l}{\textbf{Fallunterscheidung der Lösungen:}}\\
+	\hline
+	Fall 1:                    		
+		& $\lambda_1,\lambda_2 \in \mathbb{R}$
+		& $y_1(t) = e^{\lambda_1 t}, y_2(t) = e^{\lambda_2 t}$\\
+	Fall 2:                    		
+		& $\lambda = \lambda_1 = \lambda_2 \And \lambda \in \mathbb{R}$
+		& $y_1(t) = e^{\lambda t}, y_2(t) = te^{\lambda t}$\\
+	Fall 3:                    		
+		& $\lambda_1,\lambda_2 \in \mathbb{C}$
+		& $z_1(t) = e^{\lambda_1 t}, z_2(t) = e^{\lambda_2 t}$\\
+	    & $y_1(t) = Real(z_1), y_2(t) = Imag(z_1)$\\
+	    & oder: $z_{1,2} = a \pm j\beta$
+	    & $y_1(t) = e^{ax}\cos(\beta x), y_2(t) = e^{ax} \sin(\beta x)$\\
+	Freiheitsgrade:            		
+		& \multicolumn{2}{l}{$C_1,C_2$ mit Hilfe der gegebenen Anfangsbedingungen bestimmen.}\\
+	\hline
 \end{tabular} \\ \\
 $\Rightarrow$ wenn \textbf{$n.$ Ordnung} immer noch ein $\cdot t$ mehr (wie im 2. Fall).\\ 
 
 \subsection{Inhomogen 2. Ordnung}
-\begin{tabbing}
-1. Homogenes System lösen \= $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
-2. Inhomogener Ansatz \> $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = g(t)$\\
-\>\begin{tabular}{|l|l|}
+\begin{tabular}{p{0.4\textwidth}p{0.55\textwidth}}
+	\multicolumn{2}{l}{\textbf{Vorgehen:}}\\
 	\hline
-	\textbf{Störfunktion $g(x)$} & \textbf{Zugehöriger Ansatz für $y_s(x)$} \\ \hline
-	$a$ (const)					 & $b$ (const) \\ \hline
-	$a_0 + a_1x + \dots + a_mx^m$& $b_0 + b_1x+ \dots  b_mx^m$ \\ \hline
-	$ae^{\lambda x}$			 & $be^{\lambda x}$ \\ \hline
-	$a \sin(mx)$ & \\ 
-	$b \cos(mx)$				 & $c \sin(mx) + d \cos(mx)$ \\
-	$a \sin(mx) + b \cos(mx)$ & \\ \hline
-\end{tabular}\\ \\
-3. $y_s(x)$ in DGL einsetzen. \\
-4. Zusammensetzen \> $y(t)=y_h(t)+y_p(t)$
-\end{tabbing}
+	1. Homogenes System lösen
+		& $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = 0$\\
+	2. Inhomogener Ansatz
+		& $a \cdot y''(t) + b \cdot y'(t) + c \cdot y(t) = g(t)$\\
+	3. $y_s(x)$ in DGL einsetzen.
+		&\\
+	4. Zusammensetzen
+		& $y(t)=y_h(t)+y_p(t)$\\
+	\multicolumn{2}{l}{\textbf{Lösungsansätze:}}\\
+	\hline
+	\multicolumn{2}{l}{
+		\begin{tabular}{|p{0.37\textwidth}|p{0.2\textwidth}|p{0.37\textwidth}|}
+			\hline
+			\textbf{Störfunktion $g(x)$} 	
+				& \textbf{Bedingung an $R$}
+				& \textbf{Zugehöriger Ansatz für $y_s(x)$} \\
+			\hline
+			$a$ (const)					 	
+				& 
+				& $b$ (const) \\ 
+			\hline
+			$a_0 + a_1x + \dots + a_mx^m$	
+				& $0 \in R, n-\mathrm{fach}$
+				& $x^n(b_0 + b_1x+ \dots  b_mx^m)$ \\ 
+			\hline
+			$ae^{\lambda x}$			 	
+				& $\lambda \in R, n-\mathrm{fach}$
+				& $x^n \cdot be^{\lambda x}$ \\ 
+			\hline
+			$a \sin(\omega x)$ 					
+				&
+				& \\
+			$b \cos(\omega x)$				 	
+				& $\pm j\omega \in R, n-\mathrm{fach}$
+				& $x^n(c \sin(\omega x) + d \cos(\omega x))$ \\
+			$a \sin(\omega x) + b \cos(\omega x)$ 
+				&
+				& \\ 
+			\hline
+		\end{tabular}}\\
+\end{tabular}
+	
+	\vspace{0.5cm}
+	
+	\textbf{$R$ ist die Lösungsmenge des charakteristischen Polynoms.}
+	
 \subsection{Variation der Konstanten}
 Hat man eine lineare, inhomogene Differentialgleichung 2. Ordnung mit folgender Struktur:\\
 \begin{equation*}
