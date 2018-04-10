@@ -30,4 +30,5 @@
 *.sublime-workspace
 revision.tex
 *~
-
+tmp/
+out/
